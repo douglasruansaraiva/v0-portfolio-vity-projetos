@@ -225,22 +225,7 @@ export default function Portfolio() {
           </div>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          onClick={scrollToSections}
-          className="absolute bottom-8 flex flex-col items-center gap-2 text-foreground/50 transition-colors hover:text-foreground md:bottom-12"
-        >
-          <span className="text-xs font-light tracking-[0.3em]">SERVIÇOS</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            <ArrowDown className="h-5 w-5" />
-          </motion.div>
-        </motion.button>
+
       </section>
 
       {/* Sections */}
