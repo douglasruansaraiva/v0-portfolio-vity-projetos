@@ -22,23 +22,19 @@ interface Section {
   }
 }
 
+const quemSomos = {
+  description: "A Vity Projetos e Consultoria nasceu da paixão por transformar ideias em realidade. Com uma equipe de profissionais altamente qualificados, oferecemos soluções completas em engenharia, desde a concepção do projeto até a execução final.",
+  values: [
+    "Equipe Especializada",
+    "Compromisso com Qualidade",
+    "Atendimento Personalizado",
+    "Inovação e Tecnologia",
+    "Transparência Total",
+    "Prazo e Confiança"
+  ]
+}
+
 const sections: Section[] = [
-  {
-    id: "quem-somos",
-    title: "QUEM SOMOS",
-    subtitle: "Nossa história e valores",
-    content: {
-      description: "A Vity Projetos e Consultoria nasceu da paixão por transformar ideias em realidade. Com uma equipe de profissionais altamente qualificados, oferecemos soluções completas em engenharia, desde a concepção do projeto até a execução final. Nossa missão é entregar excelência técnica com compromisso, transparência e inovação em cada projeto.",
-      items: [
-        "Equipe Especializada",
-        "Compromisso com Qualidade",
-        "Atendimento Personalizado",
-        "Inovação e Tecnologia",
-        "Transparência Total",
-        "Prazo e Confiança"
-      ]
-    }
-  },
   {
     id: "casarao",
     title: "CASARÃO",
@@ -142,8 +138,8 @@ export default function Portfolio() {
 
   return (
     <main className="min-h-screen bg-background text-foreground">
-      {/* Hero Section - Full Screen with Large Logo */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center px-6">
+      {/* Hero Section - Full Screen with Large Logo + Quem Somos */}
+      <section className="relative flex min-h-screen flex-col items-center justify-center px-6 py-20">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -164,52 +160,6 @@ export default function Portfolio() {
           }} />
         </div>
 
-        {/* Main Logo - Large and Centered */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative z-10 flex flex-col items-center gap-8"
-        >
-          <Image
-            src="/logo-vity.png"
-            alt="Vity Engenharia e Consultoria"
-            width={500}
-            height={140}
-            className="h-auto w-[280px] brightness-0 invert md:w-[400px] lg:w-[500px]"
-            priority
-          />
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col items-center gap-4 text-center"
-          >
-            <div className="h-px w-24 bg-foreground/30" />
-            <p className="text-sm font-light tracking-[0.4em] text-foreground/70 md:text-base">
-              ENGENHARIA & CONSULTORIA
-            </p>
-          </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1 }}
-          onClick={scrollToSections}
-          className="absolute bottom-12 flex flex-col items-center gap-2 text-foreground/50 transition-colors hover:text-foreground"
-        >
-          <span className="text-xs font-light tracking-[0.3em]">EXPLORAR</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            <ArrowDown className="h-5 w-5" />
-          </motion.div>
-        </motion.button>
-
         {/* Instagram Link - Top Right */}
         <a
           href="https://www.instagram.com/vityprojetos_/"
@@ -220,6 +170,77 @@ export default function Portfolio() {
           <Instagram className="h-5 w-5" />
           <span className="hidden text-sm font-light tracking-wider md:inline">@vityprojetos_</span>
         </a>
+
+        {/* Main Logo - Large and Centered */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative z-10 flex flex-col items-center gap-6"
+        >
+          <Image
+            src="/logo-vity.png"
+            alt="Vity Engenharia e Consultoria"
+            width={600}
+            height={170}
+            className="h-auto w-[300px] brightness-0 invert md:w-[450px] lg:w-[550px]"
+            priority
+          />
+        </motion.div>
+
+        {/* Quem Somos - Below Logo */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="relative z-10 mt-12 max-w-3xl text-center md:mt-16"
+        >
+          <div className="flex flex-col items-center gap-6">
+            <div className="flex items-center gap-4">
+              <div className="h-px w-8 bg-foreground/30 md:w-12" />
+              <h2 className="text-xs font-light tracking-[0.4em] text-foreground/60 md:text-sm">
+                QUEM SOMOS
+              </h2>
+              <div className="h-px w-8 bg-foreground/30 md:w-12" />
+            </div>
+            
+            <p className="text-base font-light leading-relaxed text-foreground/80 md:text-lg lg:text-xl">
+              {quemSomos.description}
+            </p>
+
+            {/* Values Grid */}
+            <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+              {quemSomos.values.map((value, i) => (
+                <motion.div
+                  key={value}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.7 + i * 0.1 }}
+                  className="border border-foreground/10 px-4 py-3 text-xs font-light tracking-wider text-foreground/70 transition-colors hover:border-foreground/30 hover:text-foreground md:text-sm"
+                >
+                  {value}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+          onClick={scrollToSections}
+          className="absolute bottom-8 flex flex-col items-center gap-2 text-foreground/50 transition-colors hover:text-foreground md:bottom-12"
+        >
+          <span className="text-xs font-light tracking-[0.3em]">SERVIÇOS</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          >
+            <ArrowDown className="h-5 w-5" />
+          </motion.div>
+        </motion.button>
       </section>
 
       {/* Sections */}
