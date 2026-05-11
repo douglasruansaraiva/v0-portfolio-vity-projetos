@@ -2,20 +2,64 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, Instagram, Mail, Phone, MapPin, ArrowDown, ChevronRight } from "lucide-react"
+import { X, Instagram, Mail, Phone, ArrowDown, ChevronRight, Play } from "lucide-react"
 import Image from "next/image"
 
 interface Section {
   id: string
   title: string
   subtitle: string
+  isHighlight?: boolean
   content: {
     description: string
     items?: string[]
+    gallery?: {
+      type: "image" | "video"
+      src: string
+      alt?: string
+      poster?: string
+    }[]
   }
 }
 
 const sections: Section[] = [
+  {
+    id: "quem-somos",
+    title: "QUEM SOMOS",
+    subtitle: "Nossa história e valores",
+    content: {
+      description: "A Vity Projetos e Consultoria nasceu da paixão por transformar ideias em realidade. Com uma equipe de profissionais altamente qualificados, oferecemos soluções completas em engenharia, desde a concepção do projeto até a execução final. Nossa missão é entregar excelência técnica com compromisso, transparência e inovação em cada projeto.",
+      items: [
+        "Equipe Especializada",
+        "Compromisso com Qualidade",
+        "Atendimento Personalizado",
+        "Inovação e Tecnologia",
+        "Transparência Total",
+        "Prazo e Confiança"
+      ]
+    }
+  },
+  {
+    id: "casarao",
+    title: "CASARÃO",
+    subtitle: "Projeto em destaque",
+    isHighlight: true,
+    content: {
+      description: "O Casarão é um dos nossos projetos mais emblemáticos, representando a união perfeita entre tradição e modernidade. Este projeto especial demonstra nossa capacidade de trabalhar com construções históricas, preservando sua essência enquanto agregamos conforto e funcionalidade contemporâneos.",
+      items: [
+        "Restauração Histórica",
+        "Projeto Arquitetônico Completo",
+        "Modernização de Instalações",
+        "Valorização do Patrimônio"
+      ],
+      gallery: [
+        { type: "image", src: "/casarao/foto-1.jpg", alt: "Casarão - Fachada Principal" },
+        { type: "image", src: "/casarao/foto-2.jpg", alt: "Casarão - Interior" },
+        { type: "image", src: "/casarao/foto-3.jpg", alt: "Casarão - Detalhes" },
+        { type: "video", src: "/casarao/video-1.mp4", poster: "/casarao/video-poster.jpg" }
+      ]
+    }
+  },
   {
     id: "projetos",
     title: "PROJETOS",
@@ -81,9 +125,11 @@ const sections: Section[] = [
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState<string | null>(null)
+  const [activeMediaIndex, setActiveMediaIndex] = useState(0)
 
   const handleSectionClick = (sectionId: string) => {
     setActiveSection(sectionId)
+    setActiveMediaIndex(0)
   }
 
   const closeSection = () => {
@@ -189,16 +235,29 @@ export default function Portfolio() {
         {sections.map((section, index) => (
           <motion.section
             key={section.id}
-            className="group relative cursor-pointer border-b border-foreground/10 transition-all duration-500"
+            className={`group relative cursor-pointer border-b border-foreground/10 transition-all duration-500 ${
+              section.isHighlight ? "bg-[#1A3D5C]/30" : ""
+            }`}
             onClick={() => handleSectionClick(section.id)}
-            whileHover={{ backgroundColor: "rgba(26, 61, 92, 0.2)" }}
+            whileHover={{ backgroundColor: section.isHighlight ? "rgba(26, 61, 92, 0.5)" : "rgba(26, 61, 92, 0.2)" }}
           >
+            {section.isHighlight && (
+              <div className="absolute right-6 top-6 md:right-16">
+                <span className="text-[10px] font-light tracking-[0.3em] text-foreground/40 border border-foreground/20 px-3 py-1">
+                  DESTAQUE
+                </span>
+              </div>
+            )}
             <div className="flex min-h-[200px] items-center justify-between px-6 py-12 md:min-h-[250px] md:px-16 lg:px-24">
               <div className="flex flex-col gap-2">
                 <span className="text-xs font-light tracking-[0.3em] text-foreground/40">
                   0{index + 1}
                 </span>
-                <h3 className="text-3xl font-light tracking-[0.2em] md:text-5xl lg:text-6xl">
+                <h3 className={`font-light tracking-[0.2em] ${
+                  section.isHighlight 
+                    ? "text-4xl md:text-6xl lg:text-7xl" 
+                    : "text-3xl md:text-5xl lg:text-6xl"
+                }`}>
                   {section.title}
                 </h3>
                 <p className="mt-2 text-sm font-light tracking-wider text-foreground/60 md:text-base">
@@ -347,6 +406,75 @@ export default function Portfolio() {
                           </motion.li>
                         ))}
                       </ul>
+                    )}
+
+                    {/* Gallery for Casarão */}
+                    {section.content.gallery && section.content.gallery.length > 0 && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        className="space-y-6 pt-8"
+                      >
+                        <h4 className="text-xs font-light tracking-[0.3em] text-foreground/50">
+                          GALERIA DO PROJETO
+                        </h4>
+                        
+                        {/* Main Display */}
+                        <div className="relative aspect-video w-full overflow-hidden bg-secondary/30">
+                          {section.content.gallery[activeMediaIndex].type === "video" ? (
+                            <div className="relative h-full w-full">
+                              <video
+                                src={section.content.gallery[activeMediaIndex].src}
+                                poster={section.content.gallery[activeMediaIndex].poster}
+                                controls
+                                className="h-full w-full object-cover"
+                              />
+                            </div>
+                          ) : (
+                            <div className="relative h-full w-full flex items-center justify-center">
+                              <div className="text-center text-foreground/40">
+                                <p className="text-sm tracking-wider">
+                                  {section.content.gallery[activeMediaIndex].alt}
+                                </p>
+                                <p className="mt-2 text-xs">Adicione suas fotos aqui</p>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Thumbnails */}
+                        <div className="flex gap-3 overflow-x-auto pb-2">
+                          {section.content.gallery.map((media, i) => (
+                            <button
+                              key={i}
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                setActiveMediaIndex(i)
+                              }}
+                              className={`relative flex-shrink-0 h-20 w-28 overflow-hidden border-2 transition-all ${
+                                activeMediaIndex === i 
+                                  ? "border-foreground" 
+                                  : "border-foreground/20 hover:border-foreground/50"
+                              }`}
+                            >
+                              {media.type === "video" ? (
+                                <div className="flex h-full w-full items-center justify-center bg-secondary/50">
+                                  <Play className="h-6 w-6 text-foreground/60" />
+                                </div>
+                              ) : (
+                                <div className="flex h-full w-full items-center justify-center bg-secondary/30">
+                                  <span className="text-[10px] text-foreground/40">IMG {i + 1}</span>
+                                </div>
+                              )}
+                            </button>
+                          ))}
+                        </div>
+
+                        <p className="text-xs font-light text-foreground/40">
+                          * Adicione suas fotos e vídeos na pasta /public/casarao/
+                        </p>
+                      </motion.div>
                     )}
 
                     {/* CTA */}
