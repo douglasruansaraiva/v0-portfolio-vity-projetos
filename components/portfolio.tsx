@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, Instagram, Mail, ArrowDown, ChevronRight, Play } from "lucide-react"
+import { X, Instagram, Mail, ArrowDown, ChevronRight } from "lucide-react"
 import Image from "next/image"
 
 interface Section {
@@ -49,10 +49,9 @@ const sections: Section[] = [
         "Valorização do Patrimônio"
       ],
       gallery: [
-        { type: "image", src: "/casarao/foto-1.jpg", alt: "Casarão - Fachada Principal" },
-        { type: "image", src: "/casarao/foto-2.jpg", alt: "Casarão - Interior" },
-        { type: "image", src: "/casarao/foto-3.jpg", alt: "Casarão - Detalhes" },
-        { type: "video", src: "/casarao/video-1.mp4", poster: "/casarao/video-poster.jpg" }
+        { type: "image", src: "/casarao/foto-1.png", alt: "Casarão - Fachada com detalhes coloniais" },
+        { type: "image", src: "/casarao/foto-2.png", alt: "Casarão - Vista do jardim" },
+        { type: "image", src: "/casarao/foto-3.jpg", alt: "Casarão - Fachada principal ao entardecer" }
       ]
     }
   },
@@ -424,37 +423,32 @@ export default function Portfolio() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
-                        className="space-y-6 pt-8"
+                        className="space-y-8 pt-8"
                       >
                         <h4 className="text-xs font-light tracking-[0.3em] text-foreground/50">
                           GALERIA DO PROJETO
                         </h4>
                         
-                        {/* Main Display */}
-                        <div className="relative aspect-video w-full overflow-hidden bg-secondary/30">
-                          {section.content.gallery[activeMediaIndex].type === "video" ? (
-                            <div className="relative h-full w-full">
-                              <video
-                                src={section.content.gallery[activeMediaIndex].src}
-                                poster={section.content.gallery[activeMediaIndex].poster}
-                                controls
-                                className="h-full w-full object-cover"
-                              />
-                            </div>
-                          ) : (
-                            <div className="relative h-full w-full flex items-center justify-center">
-                              <div className="text-center text-foreground/40">
-                                <p className="text-sm tracking-wider">
-                                  {section.content.gallery[activeMediaIndex].alt}
-                                </p>
-                                <p className="mt-2 text-xs">Adicione suas fotos aqui</p>
-                              </div>
-                            </div>
-                          )}
+                        {/* Main Display - Large Image */}
+                        <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary/20">
+                          <Image
+                            src={section.content.gallery[activeMediaIndex].src}
+                            alt={section.content.gallery[activeMediaIndex].alt || "Projeto Casarão"}
+                            fill
+                            className="object-cover transition-all duration-500"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                            priority
+                          />
+                          {/* Image Label */}
+                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/80 to-transparent p-6">
+                            <p className="text-sm font-light tracking-wider text-foreground/90">
+                              {section.content.gallery[activeMediaIndex].alt}
+                            </p>
+                          </div>
                         </div>
 
                         {/* Thumbnails */}
-                        <div className="flex gap-3 overflow-x-auto pb-2">
+                        <div className="flex gap-4 overflow-x-auto pb-2">
                           {section.content.gallery.map((media, i) => (
                             <button
                               key={i}
@@ -462,28 +456,24 @@ export default function Portfolio() {
                                 e.stopPropagation()
                                 setActiveMediaIndex(i)
                               }}
-                              className={`relative flex-shrink-0 h-20 w-28 overflow-hidden border-2 transition-all ${
+                              className={`relative flex-shrink-0 h-24 w-36 overflow-hidden border-2 transition-all md:h-28 md:w-44 ${
                                 activeMediaIndex === i 
                                   ? "border-foreground" 
                                   : "border-foreground/20 hover:border-foreground/50"
                               }`}
                             >
-                              {media.type === "video" ? (
-                                <div className="flex h-full w-full items-center justify-center bg-secondary/50">
-                                  <Play className="h-6 w-6 text-foreground/60" />
-                                </div>
-                              ) : (
-                                <div className="flex h-full w-full items-center justify-center bg-secondary/30">
-                                  <span className="text-[10px] text-foreground/40">IMG {i + 1}</span>
-                                </div>
-                              )}
+                              <Image
+                                src={media.src}
+                                alt={media.alt || `Foto ${i + 1}`}
+                                fill
+                                className={`object-cover transition-all duration-300 ${
+                                  activeMediaIndex === i ? "scale-105" : "hover:scale-105"
+                                }`}
+                                sizes="176px"
+                              />
                             </button>
                           ))}
                         </div>
-
-                        <p className="text-xs font-light text-foreground/40">
-                          * Adicione suas fotos e vídeos na pasta /public/casarao/
-                        </p>
                       </motion.div>
                     )}
 
