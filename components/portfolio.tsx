@@ -120,11 +120,9 @@ const sections: Section[] = [
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState<string | null>(null)
-  const [activeMediaIndex, setActiveMediaIndex] = useState(0)
 
   const handleSectionClick = (sectionId: string) => {
     setActiveSection(sectionId)
-    setActiveMediaIndex(0)
   }
 
   const closeSection = () => {
@@ -417,7 +415,7 @@ export default function Portfolio() {
                       </ul>
                     )}
 
-                    {/* Gallery for Casarão */}
+                    {/* Gallery for Casarão - All images expanded */}
                     {section.content.gallery && section.content.gallery.length > 0 && (
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -429,49 +427,30 @@ export default function Portfolio() {
                           GALERIA DO PROJETO
                         </h4>
                         
-                        {/* Main Display - Large Image */}
-                        <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary/20">
-                          <Image
-                            src={section.content.gallery[activeMediaIndex].src}
-                            alt={section.content.gallery[activeMediaIndex].alt || "Projeto Casarão"}
-                            fill
-                            className="object-cover transition-all duration-500"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                            priority
-                          />
-                          {/* Image Label */}
-                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/80 to-transparent p-6">
-                            <p className="text-sm font-light tracking-wider text-foreground/90">
-                              {section.content.gallery[activeMediaIndex].alt}
-                            </p>
-                          </div>
-                        </div>
-
-                        {/* Thumbnails */}
-                        <div className="flex gap-4 overflow-x-auto pb-2">
+                        {/* All Images Stacked */}
+                        <div className="space-y-6">
                           {section.content.gallery.map((media, i) => (
-                            <button
+                            <motion.div
                               key={i}
-                              onClick={(e) => {
-                                e.stopPropagation()
-                                setActiveMediaIndex(i)
-                              }}
-                              className={`relative flex-shrink-0 h-24 w-36 overflow-hidden border-2 transition-all md:h-28 md:w-44 ${
-                                activeMediaIndex === i 
-                                  ? "border-foreground" 
-                                  : "border-foreground/20 hover:border-foreground/50"
-                              }`}
+                              initial={{ opacity: 0, y: 30 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.5, delay: 0.5 + i * 0.15 }}
+                              className="relative aspect-[16/10] w-full overflow-hidden bg-secondary/20"
                             >
                               <Image
                                 src={media.src}
-                                alt={media.alt || `Foto ${i + 1}`}
+                                alt={media.alt || `Projeto Casarão - Foto ${i + 1}`}
                                 fill
-                                className={`object-cover transition-all duration-300 ${
-                                  activeMediaIndex === i ? "scale-105" : "hover:scale-105"
-                                }`}
-                                sizes="176px"
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                               />
-                            </button>
+                              {/* Image Label */}
+                              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6">
+                                <p className="text-sm font-light tracking-wider text-foreground/90">
+                                  {media.alt}
+                                </p>
+                              </div>
+                            </motion.div>
                           ))}
                         </div>
                       </motion.div>
