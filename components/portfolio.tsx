@@ -199,9 +199,9 @@ export default function Portfolio() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="relative z-10 mt-12 max-w-3xl text-center md:mt-16"
+          className="relative z-10 mt-12 max-w-4xl text-center md:mt-16"
         >
-          <div className="flex flex-col items-center gap-6">
+          <div className="flex flex-col items-center gap-8">
             <div className="flex items-center gap-4">
               <div className="h-px w-8 bg-foreground/30 md:w-12" />
               <h2 className="text-xs font-light tracking-[0.4em] text-foreground/60 md:text-sm">
@@ -209,19 +209,36 @@ export default function Portfolio() {
               </h2>
               <div className="h-px w-8 bg-foreground/30 md:w-12" />
             </div>
+
+            {/* Team Photo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="relative w-full max-w-2xl overflow-hidden"
+            >
+              <Image
+                src="/equipe.jpg"
+                alt="Equipe Vity Projetos - Sócios Parceiros"
+                width={800}
+                height={533}
+                className="w-full h-auto object-cover"
+                priority
+              />
+            </motion.div>
             
             <p className="text-base font-light leading-relaxed text-foreground/80 md:text-lg lg:text-xl">
               {quemSomos.description}
             </p>
 
             {/* Values Grid */}
-            <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+            <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
               {quemSomos.values.map((value, i) => (
                 <motion.div
                   key={value}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.7 + i * 0.1 }}
+                  transition={{ duration: 0.4, delay: 0.9 + i * 0.1 }}
                   className="border border-foreground/10 px-4 py-3 text-xs font-light tracking-wider text-foreground/70 transition-colors hover:border-foreground/30 hover:text-foreground md:text-sm"
                 >
                   {value}
