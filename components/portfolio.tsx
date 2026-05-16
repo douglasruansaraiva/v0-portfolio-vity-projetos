@@ -113,6 +113,15 @@ const sections: Section[] = [
         "Reformas",
         "Ampliações",
         "Manutenção Predial"
+      ],
+      gallery: [
+        { type: "image", src: "/obras/obra-1.jpg", alt: "Obra em construção - Estrutura de concreto" },
+        { type: "image", src: "/obras/obra-2.jpg", alt: "Estrutura metálica A-frame sobre rocha" },
+        { type: "image", src: "/obras/obra-3.jpg", alt: "Vista aérea da construção metálica" },
+        { type: "image", src: "/obras/obra-4.jpg", alt: "Estrutura triangular com paisagem" },
+        { type: "image", src: "/obras/obra-5.jpg", alt: "Vista superior da estrutura metálica" },
+        { type: "image", src: "/obras/obra-6.jpg", alt: "Estrutura A-frame vista frontal" },
+        { type: "image", src: "/obras/obra-7.jpg", alt: "Vista panorâmica do local da obra" }
       ]
     }
   }
