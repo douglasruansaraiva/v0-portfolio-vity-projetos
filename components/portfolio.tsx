@@ -144,7 +144,7 @@ export default function Portfolio() {
 
   return (
     <main className="min-h-screen bg-background text-foreground">
-      {/* Hero Section - Full Screen with Large Logo + Quem Somos */}
+      {/* Hero Section - Full Screen with Logo + Team Photo Side by Side */}
       <section className="relative flex min-h-screen flex-col items-center justify-center px-6 py-20">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
@@ -177,31 +177,51 @@ export default function Portfolio() {
           <span className="hidden text-sm font-light tracking-wider md:inline">@vityprojetos_</span>
         </a>
 
-        {/* Main Logo - Large and Centered */}
+        {/* Logo + Team Photo Side by Side */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative z-10 flex flex-col items-center gap-6"
+          className="relative z-10 flex flex-col items-center gap-10 lg:flex-row lg:gap-16 xl:gap-20"
         >
-          <Image
-            src="/logo-vity.png"
-            alt="Vity Engenharia e Consultoria"
-            width={600}
-            height={170}
-            className="h-auto w-[300px] brightness-0 invert md:w-[450px] lg:w-[550px]"
-            priority
-          />
+          {/* Logo */}
+          <div className="flex flex-col items-center gap-4">
+            <Image
+              src="/logo-vity.png"
+              alt="Vity Engenharia e Consultoria"
+              width={600}
+              height={170}
+              className="h-auto w-[280px] brightness-0 invert md:w-[380px] lg:w-[420px]"
+              priority
+            />
+          </div>
+
+          {/* Team Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative w-full max-w-md overflow-hidden lg:max-w-lg"
+          >
+            <Image
+              src="/equipe.jpg"
+              alt="Equipe Vity Projetos - Sócios Parceiros"
+              width={600}
+              height={400}
+              className="w-full h-auto object-cover"
+              priority
+            />
+          </motion.div>
         </motion.div>
 
-        {/* Quem Somos - Below Logo */}
+        {/* Quem Somos - Below */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           className="relative z-10 mt-12 max-w-4xl text-center md:mt-16"
         >
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-6">
             <div className="flex items-center gap-4">
               <div className="h-px w-8 bg-foreground/30 md:w-12" />
               <h2 className="text-xs font-light tracking-[0.4em] text-foreground/60 md:text-sm">
@@ -209,23 +229,6 @@ export default function Portfolio() {
               </h2>
               <div className="h-px w-8 bg-foreground/30 md:w-12" />
             </div>
-
-            {/* Team Photo */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="relative w-full max-w-2xl overflow-hidden"
-            >
-              <Image
-                src="/equipe.jpg"
-                alt="Equipe Vity Projetos - Sócios Parceiros"
-                width={800}
-                height={533}
-                className="w-full h-auto object-cover"
-                priority
-              />
-            </motion.div>
             
             <p className="text-base font-light leading-relaxed text-foreground/80 md:text-lg lg:text-xl">
               {quemSomos.description}
@@ -238,7 +241,7 @@ export default function Portfolio() {
                   key={value}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.9 + i * 0.1 }}
+                  transition={{ duration: 0.4, delay: 0.8 + i * 0.1 }}
                   className="border border-foreground/10 px-4 py-3 text-xs font-light tracking-wider text-foreground/70 transition-colors hover:border-foreground/30 hover:text-foreground md:text-sm"
                 >
                   {value}
