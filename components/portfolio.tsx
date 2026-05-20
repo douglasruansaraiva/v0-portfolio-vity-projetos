@@ -57,9 +57,16 @@ const sections: Section[] = [
         "Valorização do Patrimônio"
       ],
       gallery: [
-        { type: "image", src: "/casarao/foto-1.png", alt: "Casarão - Fachada com detalhes coloniais" },
-        { type: "image", src: "/casarao/foto-2.png", alt: "Casarão - Vista do jardim" },
-        { type: "image", src: "/casarao/foto-3.jpg", alt: "Casarão - Fachada principal ao entardecer" }
+        { type: "image", src: "/casarao/casarao-02.jpg", alt: "Casarão - Lateral ao entardecer com tons rosados" },
+        { type: "image", src: "/casarao/casarao-03.jpg", alt: "Casarão - Entre palmeiras altas com estrutura branca" },
+        { type: "image", src: "/casarao/casarao-04.jpg", alt: "Casarão - Detalhe da varanda com decoração vintage" },
+        { type: "image", src: "/casarao/casarao-05.jpg", alt: "Casarão - Fachada colorida com portas verdes" },
+        { type: "image", src: "/casarao/casarao-06.jpg", alt: "Casarão - Parede com sombras e potes de barro" },
+        { type: "image", src: "/casarao/casarao-07.jpg", alt: "Casarão - Campo de girassóis ao pôr do sol" },
+        { type: "image", src: "/casarao/casarao-08.jpg", alt: "Casarão - Fachada iluminada ao entardecer" },
+        { type: "image", src: "/casarao/casarao-09.jpg", alt: "Casarão - Vista panorâmica com cores pastéis" },
+        { type: "image", src: "/casarao/casarao-10.jpg", alt: "Casarão - Entre palmeiras iluminado ao anoitecer" },
+        { type: "image", src: "/casarao/casarao-11.jpg", alt: "Casarão - Detalhe do banco em primeiro plano" }
       ]
     }
   },
