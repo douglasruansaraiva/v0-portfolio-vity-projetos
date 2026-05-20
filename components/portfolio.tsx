@@ -202,7 +202,7 @@ export default function Portfolio() {
       {/* Sections */}
       <div id="sections" className="relative">
         {/* Section Intro */}
-        <div className="border-b border-foreground/10 bg-secondary/20 px-6 py-16 text-center md:py-20">
+        <div className="bg-secondary/20 px-6 py-16 text-center md:py-20">
           <h2 className="text-xs font-light tracking-[0.5em] text-foreground/60 md:text-sm">
             NOSSOS SERVIÇOS
           </h2>
