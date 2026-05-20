@@ -29,17 +29,11 @@ const sections: Section[] = [
     subtitle: "Nossa história e valores",
     isHighlight: true,
     content: {
-      description: "A Vity Projetos e Consultoria nasceu da paixão por transformar ideias em realidade. Com uma equipe de profissionais altamente qualificados, oferecemos soluções completas em engenharia, desde a concepção do projeto até a execução final. Nossa missão é entregar excelência técnica com compromisso, transparência e inovação em cada projeto.",
-      items: [
-        "Equipe Especializada",
-        "Compromisso com Qualidade",
-        "Atendimento Personalizado",
-        "Inovação e Tecnologia",
-        "Transparência Total",
-        "Prazo e Confiança"
-      ],
+      description: "",
       gallery: [
-        { type: "image", src: "/equipe.jpg", alt: "Equipe Vity Projetos - Sócios Parceiros" }
+        { type: "image", src: "/socios/socios-01.jpg", alt: "Sérgio Manoel - Sócio Fundador" },
+        { type: "image", src: "/socios/socios-02.jpg", alt: "Rodrigo Souza - Sócio Fundador" },
+        { type: "image", src: "/socios/socios-03.jpg", alt: "Equipe Vascara Interiores" }
       ]
     }
   },
@@ -404,28 +398,6 @@ export default function Portfolio() {
                       </motion.div>
                     )}
                     
-                    {/* Description */}
-                    <p className="max-w-2xl text-lg font-light leading-relaxed text-foreground/80 md:text-xl">
-                      {section.content.description}
-                    </p>
-
-                    {/* Items Grid */}
-                    {section.content.items && section.content.items.length > 0 && (
-                      <ul className="grid gap-4 pt-4 md:grid-cols-2 md:gap-6">
-                        {section.content.items.map((item, i) => (
-                          <motion.li
-                            key={i}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.4, delay: 0.4 + i * 0.08 }}
-                            className="flex items-center gap-4 border-l-2 border-foreground/20 py-3 pl-6 text-base font-light tracking-wide transition-colors hover:border-foreground/60 md:text-lg"
-                          >
-                            {item}
-                          </motion.li>
-                        ))}
-                      </ul>
-                    )}
-
                     {/* CTA */}
                     <motion.div
                       initial={{ opacity: 0 }}
