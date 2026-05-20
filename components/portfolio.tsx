@@ -359,41 +359,15 @@ export default function Portfolio() {
                     
                     {/* Divider */}
                     <div className="h-px w-full bg-foreground/10" />
-                    
-                    {/* Description */}
-                    <p className="max-w-2xl text-lg font-light leading-relaxed text-foreground/80 md:text-xl">
-                      {section.content.description}
-                    </p>
 
-                    {/* Items Grid */}
-                    {section.content.items && section.content.items.length > 0 && (
-                      <ul className="grid gap-4 pt-4 md:grid-cols-2 md:gap-6">
-                        {section.content.items.map((item, i) => (
-                          <motion.li
-                            key={i}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.4, delay: 0.2 + i * 0.08 }}
-                            className="flex items-center gap-4 border-l-2 border-foreground/20 py-3 pl-6 text-base font-light tracking-wide transition-colors hover:border-foreground/60 md:text-lg"
-                          >
-                            {item}
-                          </motion.li>
-                        ))}
-                      </ul>
-                    )}
-
-                    {/* Gallery for Casarão - All images expanded */}
+                    {/* Gallery for Casarão/Quem Somos - All images expanded */}
                     {section.content.gallery && section.content.gallery.length > 0 && (
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                        className="space-y-8 pt-8"
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="space-y-8 pt-4"
                       >
-                        <h4 className="text-xs font-light tracking-[0.3em] text-foreground/50">
-                          GALERIA DO PROJETO
-                        </h4>
-                        
                         {/* All Images Stacked */}
                         <div className="space-y-6">
                           {section.content.gallery.map((media, i) => (
@@ -421,6 +395,28 @@ export default function Portfolio() {
                           ))}
                         </div>
                       </motion.div>
+                    )}
+                    
+                    {/* Description */}
+                    <p className="max-w-2xl text-lg font-light leading-relaxed text-foreground/80 md:text-xl">
+                      {section.content.description}
+                    </p>
+
+                    {/* Items Grid */}
+                    {section.content.items && section.content.items.length > 0 && (
+                      <ul className="grid gap-4 pt-4 md:grid-cols-2 md:gap-6">
+                        {section.content.items.map((item, i) => (
+                          <motion.li
+                            key={i}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.4, delay: 0.4 + i * 0.08 }}
+                            className="flex items-center gap-4 border-l-2 border-foreground/20 py-3 pl-6 text-base font-light tracking-wide transition-colors hover:border-foreground/60 md:text-lg"
+                          >
+                            {item}
+                          </motion.li>
+                        ))}
+                      </ul>
                     )}
 
                     {/* CTA */}
