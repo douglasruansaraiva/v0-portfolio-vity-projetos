@@ -146,10 +146,6 @@ export default function Portfolio() {
     setActiveSection(null)
   }
 
-  const scrollToSections = () => {
-    document.getElementById("sections")?.scrollIntoView({ behavior: "smooth" })
-  }
-
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* Hero Section - Full Screen with Logo */}
@@ -201,23 +197,6 @@ export default function Portfolio() {
             priority
           />
         </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1 }}
-          onClick={scrollToSections}
-          className="absolute bottom-12 flex flex-col items-center gap-2 text-foreground/50 transition-colors hover:text-foreground"
-        >
-          <span className="text-xs font-light tracking-[0.3em]">EXPLORAR</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            <ArrowDown className="h-5 w-5" />
-          </motion.div>
-        </motion.button>
       </section>
 
       {/* Sections */}
