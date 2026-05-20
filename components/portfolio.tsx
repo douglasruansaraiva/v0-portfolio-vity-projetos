@@ -200,18 +200,6 @@ export default function Portfolio() {
             className="h-auto w-[300px] brightness-0 invert md:w-[450px] lg:w-[550px]"
             priority
           />
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col items-center gap-4 text-center"
-          >
-            <div className="h-px w-24 bg-foreground/30" />
-            <p className="text-sm font-light tracking-[0.4em] text-foreground/70 md:text-base">
-              ENGENHARIA & CONSULTORIA
-            </p>
-          </motion.div>
         </motion.div>
 
         {/* Scroll Indicator */}
