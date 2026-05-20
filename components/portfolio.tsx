@@ -22,19 +22,27 @@ interface Section {
   }
 }
 
-const quemSomos = {
-  description: "A Vity Projetos e Consultoria nasceu da paixão por transformar ideias em realidade. Com uma equipe de profissionais altamente qualificados, oferecemos soluções completas em engenharia, desde a concepção do projeto até a execução final.",
-  values: [
-    "Equipe Especializada",
-    "Compromisso com Qualidade",
-    "Atendimento Personalizado",
-    "Inovação e Tecnologia",
-    "Transparência Total",
-    "Prazo e Confiança"
-  ]
-}
-
 const sections: Section[] = [
+  {
+    id: "quem-somos",
+    title: "QUEM SOMOS",
+    subtitle: "Nossa história e valores",
+    isHighlight: true,
+    content: {
+      description: "A Vity Projetos e Consultoria nasceu da paixão por transformar ideias em realidade. Com uma equipe de profissionais altamente qualificados, oferecemos soluções completas em engenharia, desde a concepção do projeto até a execução final. Nossa missão é entregar excelência técnica com compromisso, transparência e inovação em cada projeto.",
+      items: [
+        "Equipe Especializada",
+        "Compromisso com Qualidade",
+        "Atendimento Personalizado",
+        "Inovação e Tecnologia",
+        "Transparência Total",
+        "Prazo e Confiança"
+      ],
+      gallery: [
+        { type: "image", src: "/equipe.jpg", alt: "Equipe Vity Projetos - Sócios Parceiros" }
+      ]
+    }
+  },
   {
     id: "casarao",
     title: "CASARÃO",
@@ -144,7 +152,7 @@ export default function Portfolio() {
 
   return (
     <main className="min-h-screen bg-background text-foreground">
-      {/* Hero Section - Full Screen with Logo + Team Photo Side by Side */}
+      {/* Hero Section - Full Screen with Logo */}
       <section className="relative flex min-h-screen flex-col items-center justify-center px-6 py-20">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
@@ -177,81 +185,51 @@ export default function Portfolio() {
           <span className="hidden text-sm font-light tracking-wider md:inline">@vityprojetos_</span>
         </a>
 
-        {/* Logo + Team Photo Side by Side */}
+        {/* Logo - Large and Centered */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative z-10 flex flex-col items-center gap-10 lg:flex-row lg:gap-16 xl:gap-20"
+          className="relative z-10 flex flex-col items-center gap-8"
         >
-          {/* Logo */}
-          <div className="flex flex-col items-center gap-4">
-            <Image
-              src="/logo-vity.png"
-              alt="Vity Engenharia e Consultoria"
-              width={600}
-              height={170}
-              className="h-auto w-[280px] brightness-0 invert md:w-[380px] lg:w-[420px]"
-              priority
-            />
-          </div>
-
-          {/* Team Photo */}
+          <Image
+            src="/logo-vity.png"
+            alt="Vity Engenharia e Consultoria"
+            width={600}
+            height={170}
+            className="h-auto w-[300px] brightness-0 invert md:w-[450px] lg:w-[550px]"
+            priority
+          />
+          
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative w-full max-w-md overflow-hidden lg:max-w-lg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex flex-col items-center gap-4 text-center"
           >
-            <Image
-              src="/equipe.jpg"
-              alt="Equipe Vity Projetos - Sócios Parceiros"
-              width={600}
-              height={400}
-              className="w-full h-auto object-cover"
-              priority
-            />
+            <div className="h-px w-24 bg-foreground/30" />
+            <p className="text-sm font-light tracking-[0.4em] text-foreground/70 md:text-base">
+              ENGENHARIA & CONSULTORIA
+            </p>
           </motion.div>
         </motion.div>
 
-        {/* Quem Somos - Below */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="relative z-10 mt-12 max-w-4xl text-center md:mt-16"
+        {/* Scroll Indicator */}
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1 }}
+          onClick={scrollToSections}
+          className="absolute bottom-12 flex flex-col items-center gap-2 text-foreground/50 transition-colors hover:text-foreground"
         >
-          <div className="flex flex-col items-center gap-6">
-            <div className="flex items-center gap-4">
-              <div className="h-px w-8 bg-foreground/30 md:w-12" />
-              <h2 className="text-xs font-light tracking-[0.4em] text-foreground/60 md:text-sm">
-                QUEM SOMOS
-              </h2>
-              <div className="h-px w-8 bg-foreground/30 md:w-12" />
-            </div>
-            
-            <p className="text-base font-light leading-relaxed text-foreground/80 md:text-lg lg:text-xl">
-              {quemSomos.description}
-            </p>
-
-            {/* Values Grid */}
-            <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
-              {quemSomos.values.map((value, i) => (
-                <motion.div
-                  key={value}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.8 + i * 0.1 }}
-                  className="border border-foreground/10 px-4 py-3 text-xs font-light tracking-wider text-foreground/70 transition-colors hover:border-foreground/30 hover:text-foreground md:text-sm"
-                >
-                  {value}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
-
+          <span className="text-xs font-light tracking-[0.3em]">EXPLORAR</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          >
+            <ArrowDown className="h-5 w-5" />
+          </motion.div>
+        </motion.button>
       </section>
 
       {/* Sections */}
