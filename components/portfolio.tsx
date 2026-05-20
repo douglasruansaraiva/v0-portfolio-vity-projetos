@@ -201,13 +201,6 @@ export default function Portfolio() {
 
       {/* Sections */}
       <div id="sections" className="relative">
-        {/* Section Intro */}
-        <div className="bg-secondary/20 px-6 py-16 text-center md:py-20">
-          <h2 className="text-xs font-light tracking-[0.5em] text-foreground/60 md:text-sm">
-            NOSSOS SERVIÇOS
-          </h2>
-        </div>
-
         {/* Layered Sections */}
         {sections.map((section, index) => (
           <motion.section
