@@ -22,19 +22,21 @@ interface Section {
   }
 }
 
-const quemSomos = {
-  description: "A Vity Projetos e Consultoria nasceu da paixão por transformar ideias em realidade. Com uma equipe de profissionais altamente qualificados, oferecemos soluções completas em engenharia, desde a concepção do projeto até a execução final.",
-  values: [
-    "Equipe Especializada",
-    "Compromisso com Qualidade",
-    "Atendimento Personalizado",
-    "Inovação e Tecnologia",
-    "Transparência Total",
-    "Prazo e Confiança"
-  ]
-}
-
 const sections: Section[] = [
+  {
+    id: "quem-somos",
+    title: "QUEM SOMOS",
+    subtitle: "Nossa história e valores",
+    isHighlight: true,
+    content: {
+      description: "",
+      gallery: [
+        { type: "image", src: "/socios/socios-01.jpg", alt: "Sérgio Manoel - Sócio Fundador" },
+        { type: "image", src: "/socios/socios-02.jpg", alt: "Rodrigo Souza - Sócio Fundador" },
+        { type: "image", src: "/socios/socios-03.jpg", alt: "Equipe Vascara Interiores" }
+      ]
+    }
+  },
   {
     id: "casarao",
     title: "CASARÃO",
@@ -49,9 +51,16 @@ const sections: Section[] = [
         "Valorização do Patrimônio"
       ],
       gallery: [
-        { type: "image", src: "/casarao/foto-1.png", alt: "Casarão - Fachada com detalhes coloniais" },
-        { type: "image", src: "/casarao/foto-2.png", alt: "Casarão - Vista do jardim" },
-        { type: "image", src: "/casarao/foto-3.jpg", alt: "Casarão - Fachada principal ao entardecer" }
+        { type: "image", src: "/casarao/casarao-02.jpg", alt: "Casarão - Lateral ao entardecer com tons rosados" },
+        { type: "image", src: "/casarao/casarao-03.jpg", alt: "Casarão - Entre palmeiras altas com estrutura branca" },
+        { type: "image", src: "/casarao/casarao-04.jpg", alt: "Casarão - Detalhe da varanda com decoração vintage" },
+        { type: "image", src: "/casarao/casarao-05.jpg", alt: "Casarão - Fachada colorida com portas verdes" },
+        { type: "image", src: "/casarao/casarao-06.jpg", alt: "Casarão - Parede com sombras e potes de barro" },
+        { type: "image", src: "/casarao/casarao-07.jpg", alt: "Casarão - Campo de girassóis ao pôr do sol" },
+        { type: "image", src: "/casarao/casarao-08.jpg", alt: "Casarão - Fachada iluminada ao entardecer" },
+        { type: "image", src: "/casarao/casarao-09.jpg", alt: "Casarão - Vista panorâmica com cores pastéis" },
+        { type: "image", src: "/casarao/casarao-10.jpg", alt: "Casarão - Entre palmeiras iluminado ao anoitecer" },
+        { type: "image", src: "/casarao/casarao-11.jpg", alt: "Casarão - Detalhe do banco em primeiro plano" }
       ]
     }
   },
@@ -138,13 +147,9 @@ export default function Portfolio() {
     setActiveSection(null)
   }
 
-  const scrollToSections = () => {
-    document.getElementById("sections")?.scrollIntoView({ behavior: "smooth" })
-  }
-
   return (
     <main className="min-h-screen bg-background text-foreground">
-      {/* Hero Section - Full Screen with Logo + Team Photo Side by Side */}
+      {/* Hero Section - Full Screen with Logo */}
       <section className="relative flex min-h-screen flex-col items-center justify-center px-6 py-20">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
@@ -177,92 +182,26 @@ export default function Portfolio() {
           <span className="hidden text-sm font-light tracking-wider md:inline">@vityprojetos_</span>
         </a>
 
-        {/* Logo + Team Photo Side by Side */}
+        {/* Logo - Large and Centered */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative z-10 flex flex-col items-center gap-10 lg:flex-row lg:gap-16 xl:gap-20"
+          className="relative z-10 flex flex-col items-center gap-8"
         >
-          {/* Logo */}
-          <div className="flex flex-col items-center gap-4">
-            <Image
-              src="/logo-vity.png"
-              alt="Vity Engenharia e Consultoria"
-              width={600}
-              height={170}
-              className="h-auto w-[280px] brightness-0 invert md:w-[380px] lg:w-[420px]"
-              priority
-            />
-          </div>
-
-          {/* Team Photo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative w-full max-w-md overflow-hidden lg:max-w-lg"
-          >
-            <Image
-              src="/equipe.jpg"
-              alt="Equipe Vity Projetos - Sócios Parceiros"
-              width={600}
-              height={400}
-              className="w-full h-auto object-cover"
-              priority
-            />
-          </motion.div>
+          <Image
+            src="/logo-vity.png"
+            alt="Vity Engenharia e Consultoria"
+            width={600}
+            height={170}
+            className="h-auto w-[300px] brightness-0 invert md:w-[450px] lg:w-[550px]"
+            priority
+          />
         </motion.div>
-
-        {/* Quem Somos - Below */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="relative z-10 mt-12 max-w-4xl text-center md:mt-16"
-        >
-          <div className="flex flex-col items-center gap-6">
-            <div className="flex items-center gap-4">
-              <div className="h-px w-8 bg-foreground/30 md:w-12" />
-              <h2 className="text-xs font-light tracking-[0.4em] text-foreground/60 md:text-sm">
-                QUEM SOMOS
-              </h2>
-              <div className="h-px w-8 bg-foreground/30 md:w-12" />
-            </div>
-            
-            <p className="text-base font-light leading-relaxed text-foreground/80 md:text-lg lg:text-xl">
-              {quemSomos.description}
-            </p>
-
-            {/* Values Grid */}
-            <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
-              {quemSomos.values.map((value, i) => (
-                <motion.div
-                  key={value}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.8 + i * 0.1 }}
-                  className="border border-foreground/10 px-4 py-3 text-xs font-light tracking-wider text-foreground/70 transition-colors hover:border-foreground/30 hover:text-foreground md:text-sm"
-                >
-                  {value}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
-
       </section>
 
       {/* Sections */}
       <div id="sections" className="relative">
-        {/* Section Intro */}
-        <div className="border-b border-foreground/10 bg-secondary/20 px-6 py-16 text-center md:py-20">
-          <h2 className="text-xs font-light tracking-[0.5em] text-foreground/60 md:text-sm">
-            NOSSOS SERVIÇOS
-          </h2>
-        </div>
-
         {/* Layered Sections */}
         {sections.map((section, index) => (
           <motion.section
@@ -421,41 +360,15 @@ export default function Portfolio() {
                     
                     {/* Divider */}
                     <div className="h-px w-full bg-foreground/10" />
-                    
-                    {/* Description */}
-                    <p className="max-w-2xl text-lg font-light leading-relaxed text-foreground/80 md:text-xl">
-                      {section.content.description}
-                    </p>
 
-                    {/* Items Grid */}
-                    {section.content.items && section.content.items.length > 0 && (
-                      <ul className="grid gap-4 pt-4 md:grid-cols-2 md:gap-6">
-                        {section.content.items.map((item, i) => (
-                          <motion.li
-                            key={i}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.4, delay: 0.2 + i * 0.08 }}
-                            className="flex items-center gap-4 border-l-2 border-foreground/20 py-3 pl-6 text-base font-light tracking-wide transition-colors hover:border-foreground/60 md:text-lg"
-                          >
-                            {item}
-                          </motion.li>
-                        ))}
-                      </ul>
-                    )}
-
-                    {/* Gallery for Casarão - All images expanded */}
+                    {/* Gallery for Casarão/Quem Somos - All images expanded */}
                     {section.content.gallery && section.content.gallery.length > 0 && (
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                        className="space-y-8 pt-8"
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="space-y-8 pt-4"
                       >
-                        <h4 className="text-xs font-light tracking-[0.3em] text-foreground/50">
-                          GALERIA DO PROJETO
-                        </h4>
-                        
                         {/* All Images Stacked */}
                         <div className="space-y-6">
                           {section.content.gallery.map((media, i) => (
@@ -464,13 +377,14 @@ export default function Portfolio() {
                               initial={{ opacity: 0, y: 30 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.5, delay: 0.5 + i * 0.15 }}
-                              className="relative aspect-[16/10] w-full overflow-hidden bg-secondary/20"
+                              className="relative w-full bg-secondary/20"
                             >
                               <Image
                                 src={media.src}
-                                alt={media.alt || `Projeto Casarão - Foto ${i + 1}`}
-                                fill
-                                className="object-cover"
+                                alt={media.alt || `Projeto - Foto ${i + 1}`}
+                                width={1200}
+                                height={800}
+                                className="w-full h-auto object-contain"
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                               />
                               {/* Image Label */}
@@ -484,7 +398,7 @@ export default function Portfolio() {
                         </div>
                       </motion.div>
                     )}
-
+                    
                     {/* CTA */}
                     <motion.div
                       initial={{ opacity: 0 }}
