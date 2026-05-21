@@ -196,6 +196,7 @@ export default function Portfolio() {
             height={170}
             className="h-auto w-[300px] brightness-0 invert md:w-[450px] lg:w-[550px]"
             priority
+            quality={85}
           />
         </motion.div>
       </section>
@@ -386,6 +387,8 @@ export default function Portfolio() {
                                 height={800}
                                 className="w-full h-auto object-contain"
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                                loading={i === 0 ? "eager" : "lazy"}
+                                quality={75}
                               />
                               {/* Image Label */}
                               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6">
