@@ -225,11 +225,7 @@ export default function Portfolio() {
                 <span className="text-xs font-light tracking-[0.3em] text-foreground/40">
                   0{index + 1}
                 </span>
-                <h3 className={`font-light tracking-[0.2em] ${
-                  section.isHighlight 
-                    ? "text-2xl md:text-4xl lg:text-5xl" 
-                    : "text-xl md:text-3xl lg:text-4xl"
-                }`}>
+                <h3 className="font-light tracking-[0.2em] text-xl md:text-3xl lg:text-4xl">
                   {section.title}
                 </h3>
                 <p className="mt-2 text-sm font-light tracking-wider text-foreground/60 md:text-base">
