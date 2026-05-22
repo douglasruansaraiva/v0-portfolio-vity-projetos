@@ -20,6 +20,11 @@ interface Section {
       poster?: string
     }[]
   }
+  subcategories?: {
+    id: string
+    title: string
+    description: string
+  }[]
 }
 
 const sections: Section[] = [
@@ -84,7 +89,29 @@ const sections: Section[] = [
         "Projeto de Climatização",
         "Projeto de Combate a Incêndio"
       ]
-    }
+    },
+    subcategories: [
+      {
+        id: "projetos-comercial",
+        title: "COMERCIAL",
+        description: "Projetos para empreendimentos comerciais modernos e funcionais"
+      },
+      {
+        id: "projetos-interiores",
+        title: "INTERIORES",
+        description: "Design e projetos de interiores sofisticados"
+      },
+      {
+        id: "projetos-obras",
+        title: "OBRAS",
+        description: "Projetos executivos para obras com precisão técnica"
+      },
+      {
+        id: "projetos-residencial",
+        title: "RESIDENCIAL",
+        description: "Projetos residenciais personalizados e confortáveis"
+      }
+    ]
   },
   {
     id: "consultoria",
@@ -144,13 +171,16 @@ const sections: Section[] = [
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState<string | null>(null)
+  const [activeSubcategory, setActiveSubcategory] = useState<string | null>(null)
 
   const handleSectionClick = (sectionId: string) => {
     setActiveSection(sectionId)
+    setActiveSubcategory(null)
   }
 
   const closeSection = () => {
     setActiveSection(null)
+    setActiveSubcategory(null)
   }
 
   return (
@@ -364,8 +394,37 @@ export default function Portfolio() {
                     {/* Divider */}
                     <div className="h-px w-full bg-foreground/10" />
 
-                    {/* Gallery for Casarão/Quem Somos - All images expanded */}
-                    {section.content.gallery && section.content.gallery.length > 0 && (
+                    {/* Subcategories Menu - Only for Projetos */}
+                    {section.subcategories && section.subcategories.length > 0 && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="flex flex-wrap gap-3 py-4"
+                      >
+                        {section.subcategories.map((sub) => (
+                          <button
+                            key={sub.id}
+                            onClick={() => setActiveSubcategory(activeSubcategory === sub.id ? null : sub.id)}
+                            className={`px-6 py-3 text-sm font-light tracking-wider transition-all ${
+                              activeSubcategory === sub.id
+                                ? "bg-foreground text-background"
+                                : "border border-foreground/30 text-foreground hover:border-foreground/60"
+                            }`}
+                          >
+                            {sub.title}
+                          </button>
+                        ))}
+                      </motion.div>
+                    )}
+
+                    {/* Divider */}
+                    <div className="h-px w-full bg-foreground/10" />
+                    
+                    {/* Content - Show only if no subcategories or one is selected */}
+                    {(!section.subcategories || section.subcategories.length === 0 || activeSubcategory) && (
+                      <>
+                        {section.content.gallery && section.content.gallery.length > 0 && (
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -421,6 +480,17 @@ export default function Portfolio() {
                         <ChevronRight className="h-4 w-4" />
                       </a>
                     </motion.div>
+                      </>
+                    )}
+
+                    {/* Subcategory Message - Show when subcategories exist but none is selected */}
+                    {section.subcategories && section.subcategories.length > 0 && !activeSubcategory && (
+                      <div className="py-8 text-center">
+                        <p className="text-foreground/60 font-light tracking-wider">
+                          Selecione uma categoria acima para visualizar os projetos
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               )
