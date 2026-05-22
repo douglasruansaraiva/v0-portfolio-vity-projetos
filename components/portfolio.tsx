@@ -227,8 +227,8 @@ export default function Portfolio() {
                 </span>
                 <h3 className={`font-light tracking-[0.2em] ${
                   section.isHighlight 
-                    ? "text-4xl md:text-6xl lg:text-7xl" 
-                    : "text-3xl md:text-5xl lg:text-6xl"
+                    ? "text-2xl md:text-4xl lg:text-5xl" 
+                    : "text-xl md:text-3xl lg:text-4xl"
                 }`}>
                   {section.title}
                 </h3>
@@ -351,7 +351,7 @@ export default function Portfolio() {
                       <span className="text-xs font-light tracking-[0.3em] text-foreground/40">
                         0{sections.findIndex(s => s.id === section.id) + 1}
                       </span>
-                      <h2 className="text-4xl font-light tracking-[0.2em] md:text-6xl lg:text-7xl">
+                      <h2 className="text-2xl font-light tracking-[0.2em] md:text-4xl lg:text-5xl">
                         {section.title}
                       </h2>
                       <p className="text-base font-light tracking-wider text-foreground/60 md:text-lg">
