@@ -24,6 +24,12 @@ interface Section {
     id: string
     title: string
     description: string
+    gallery?: {
+      type: "image" | "video"
+      src: string
+      alt?: string
+      poster?: string
+    }[]
   }[]
 }
 
@@ -94,22 +100,40 @@ const sections: Section[] = [
       {
         id: "projetos-comercial",
         title: "COMERCIAL",
-        description: "Projetos para empreendimentos comerciais modernos e funcionais"
+        description: "Projetos para empreendimentos comerciais modernos e funcionais",
+        gallery: [
+          { type: "image", src: "/projetos/comercial-01.jpg", alt: "Restaurante Serra Negra - Terraço com design contemporâneo" },
+          { type: "image", src: "/projetos/comercial-02.jpg", alt: "Silvio Comercial - Edifício com fachada em cobre perforado" },
+          { type: "image", src: "/projetos/comercial-03.jpg", alt: "Restaurante Serra Negra - Área de lazer com poltronas" },
+          { type: "image", src: "/projetos/comercial-04.jpg", alt: "Ferreira Costa - Espaço comercial com tijolos aparentes" },
+          { type: "image", src: "/projetos/comercial-05.jpg", alt: "Corporate Center - Prédio moderno com materiais mistos" },
+          { type: "image", src: "/projetos/comercial-06.jpg", alt: "Mundo Infantil - Loja com signage colorida" },
+          { type: "image", src: "/projetos/comercial-07.jpg", alt: "Mundo Infantil - Fachada com exposição de produtos" },
+          { type: "image", src: "/projetos/comercial-08.jpg", alt: "Silvio Comercial - Edificação com padrão em tijolos" },
+          { type: "image", src: "/projetos/comercial-09.jpg", alt: "Escritório - Prédio administrativo moderno" },
+          { type: "image", src: "/projetos/comercial-10.jpg", alt: "Silvio Comercial - Fachada com elementos estruturais" },
+          { type: "image", src: "/projetos/comercial-11.jpg", alt: "Restaurante Serra Negra - Pavilhão com cobertura de madeira" },
+          { type: "image", src: "/projetos/comercial-12.jpg", alt: "Delifrio Caruaru - Fast food com design urbano" },
+          { type: "image", src: "/projetos/comercial-13.jpg", alt: "Corporate Center - Fachada contemporânea com vidro" }
+        ]
       },
       {
         id: "projetos-interiores",
         title: "INTERIORES",
-        description: "Design e projetos de interiores sofisticados"
+        description: "Design e projetos de interiores sofisticados",
+        gallery: []
       },
       {
         id: "projetos-obras",
         title: "OBRAS",
-        description: "Projetos executivos para obras com precisão técnica"
+        description: "Projetos executivos para obras com precisão técnica",
+        gallery: []
       },
       {
         id: "projetos-residencial",
         title: "RESIDENCIAL",
-        description: "Projetos residenciais personalizados e confortáveis"
+        description: "Projetos residenciais personalizados e confortáveis",
+        gallery: []
       }
     ]
   },
@@ -424,7 +448,14 @@ export default function Portfolio() {
                     {/* Content - Show only if no subcategories or one is selected */}
                     {(!section.subcategories || section.subcategories.length === 0 || activeSubcategory) && (
                       <>
-                        {section.content.gallery && section.content.gallery.length > 0 && (
+                        {/* Gallery from section or selected subcategory */}
+                        {(activeSubcategory 
+                          ? section.subcategories?.find(s => s.id === activeSubcategory)?.gallery 
+                          : section.content.gallery
+                        ) && (activeSubcategory 
+                          ? section.subcategories?.find(s => s.id === activeSubcategory)?.gallery?.length || 0 > 0
+                          : section.content.gallery?.length || 0 > 0
+                        ) && (
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -433,7 +464,10 @@ export default function Portfolio() {
                       >
                         {/* All Images Stacked */}
                         <div className="space-y-6">
-                          {section.content.gallery.map((media, i) => (
+                          {(activeSubcategory 
+                            ? section.subcategories?.find(s => s.id === activeSubcategory)?.gallery
+                            : section.content.gallery
+                          )?.map((media, i) => (
                             <motion.div
                               key={i}
                               initial={{ opacity: 0, y: 30 }}
