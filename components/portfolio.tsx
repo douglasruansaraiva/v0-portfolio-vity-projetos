@@ -60,7 +60,13 @@ const sections: Section[] = [
         { type: "image", src: "/casarao/casarao-08.jpg", alt: "Casarão - Fachada iluminada ao entardecer" },
         { type: "image", src: "/casarao/casarao-09.jpg", alt: "Casarão - Vista panorâmica com cores pastéis" },
         { type: "image", src: "/casarao/casarao-10.jpg", alt: "Casarão - Entre palmeiras iluminado ao anoitecer" },
-        { type: "image", src: "/casarao/casarao-11.jpg", alt: "Casarão - Detalhe do banco em primeiro plano" }
+        { type: "image", src: "/casarao/casarao-11.jpg", alt: "Casarão - Detalhe do banco em primeiro plano" },
+        { type: "image", src: "/casarao/casarao-12.jpg", alt: "Casarão - Quarto Viajante com banheiro integrado" },
+        { type: "image", src: "/casarao/casarao-13.jpg", alt: "Casarão - Sala de estar com tijolos e atmosfera aconchegante" },
+        { type: "image", src: "/casarao/casarao-14.jpg", alt: "Casarão - Quarto luxuoso com poltronas e detalhes em madeira" },
+        { type: "image", src: "/casarao/casarao-15.jpg", alt: "Casarão - Suíte completa com banheiro e varanda privativa" },
+        { type: "image", src: "/casarao/casarao-16.jpg", alt: "Casarão - Corredor com cores pastéis e plantas decorativas" },
+        { type: "image", src: "/casarao/casarao-17.jpg", alt: "Casarão - Sala íntima com sofá de couro e quadros antigos" }
       ]
     }
   },
