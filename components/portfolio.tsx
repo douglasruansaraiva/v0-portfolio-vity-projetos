@@ -400,13 +400,13 @@ export default function Portfolio() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="flex flex-wrap gap-3 py-4"
+                        className="flex flex-col gap-3 py-4"
                       >
                         {section.subcategories.map((sub) => (
                           <button
                             key={sub.id}
                             onClick={() => setActiveSubcategory(activeSubcategory === sub.id ? null : sub.id)}
-                            className={`px-6 py-3 text-sm font-light tracking-wider transition-all ${
+                            className={`w-full px-6 py-3 text-sm font-light tracking-wider transition-all text-center ${
                               activeSubcategory === sub.id
                                 ? "bg-foreground text-background"
                                 : "border border-foreground/30 text-foreground hover:border-foreground/60"
