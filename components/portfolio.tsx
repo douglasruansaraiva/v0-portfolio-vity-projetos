@@ -430,24 +430,61 @@ export default function Portfolio() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 30 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="flex min-h-screen flex-col justify-center px-6 py-24 md:px-16 lg:px-24"
+                  className={`flex min-h-screen flex-col justify-center px-6 py-24 md:px-16 lg:px-24 ${
+                    section.id === "quem-somos" ? "bg-gradient-to-b from-[#1A3D5C] to-[#0F2A42]" : ""
+                  }`}
                 >
                   <div className="mx-auto w-full max-w-4xl space-y-12">
                     {/* Section Header */}
-                    <div className="space-y-4">
-                      <span className="text-xs font-light tracking-[0.3em] text-foreground/40">
+                    <div className={`space-y-6 ${section.id === "quem-somos" ? "pb-8" : ""}`}>
+                      <span className={`text-xs font-light tracking-[0.3em] ${
+                        section.id === "quem-somos" ? "text-white/50" : "text-foreground/40"
+                      }`}>
                         0{sections.findIndex(s => s.id === section.id) + 1}
                       </span>
-                      <h2 className="text-2xl font-light tracking-[0.2em] md:text-4xl lg:text-5xl">
+                      <h2 className={`font-light tracking-[0.2em] md:text-4xl lg:text-5xl ${
+                        section.id === "quem-somos" ? "text-2xl text-white" : "text-2xl"
+                      }`}>
                         {section.title}
                       </h2>
-                      <p className="text-base font-light tracking-wider text-foreground/60 md:text-lg">
+                      <p className={`font-light tracking-wider md:text-lg ${
+                        section.id === "quem-somos" ? "text-base text-white/70 max-w-2xl" : "text-base text-foreground/60"
+                      }`}>
                         {section.subtitle}
                       </p>
                     </div>
                     
                     {/* Divider */}
-                    <div className="h-px w-full bg-foreground/10" />
+                    <div className={`${section.id === "quem-somos" ? "bg-white/10" : "bg-foreground/10"} h-px w-full`} />
+
+                    {/* Professional About Content for QUEM SOMOS */}
+                    {section.id === "quem-somos" && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className="space-y-8 py-8"
+                      >
+                        <div className="space-y-6 max-w-3xl">
+                          <p className="text-lg font-light leading-relaxed text-white/80">
+                            Somos uma equipe de profissionais apaixonados por design e arquitetura, dedicados a transformar espaços em experiências memoráveis. Com anos de experiência no mercado, combinamos criatividade com funcionalidade para criar soluções personalizadas.
+                          </p>
+                          <div className="grid grid-cols-2 gap-6 pt-4">
+                            <div className="space-y-2">
+                              <p className="text-sm font-light tracking-wider text-white/50 uppercase">Nossa Missão</p>
+                              <p className="text-white/70 font-light leading-relaxed">Oferecer soluções de design inovadoras que elevem o padrão de vida e negócios de nossos clientes.</p>
+                            </div>
+                            <div className="space-y-2">
+                              <p className="text-sm font-light tracking-wider text-white/50 uppercase">Nossa Visão</p>
+                              <p className="text-white/70 font-light leading-relaxed">Ser referência em design de interiores e projetos residenciais de excelência na região.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+
+                    {/* Divider */}
+                    {section.id === "quem-somos" && <div className="h-px w-full bg-white/10" />}
 
                     {/* Subcategories Menu - Only for Projetos */}
                     {section.subcategories && section.subcategories.length > 0 && (
