@@ -223,36 +223,6 @@ const sections: Section[] = [
     ]
   },
   {
-    id: "consultoria",
-    title: "CONSULTORIA",
-    subtitle: "Expertise para seu negócio",
-    content: {
-      description: "Oferecemos consultoria especializada para garantir o sucesso do seu empreendimento, com análises técnicas detalhadas e soluções personalizadas.",
-      items: [
-        "Análise de Viabilidade",
-        "Gestão de Obras",
-        "Laudos Técnicos",
-        "Perícias de Engenharia",
-        "Assessoria Técnica"
-      ]
-    }
-  },
-  {
-    id: "regularizacao",
-    title: "REGULARIZAÇÃO",
-    subtitle: "Documentação em ordem",
-    content: {
-      description: "Regularize sua obra ou imóvel com segurança e agilidade. Cuidamos de toda a burocracia para você.",
-      items: [
-        "Habite-se",
-        "Regularização de Imóveis",
-        "Aprovação de Projetos",
-        "Licenciamento Ambiental",
-        "Certidões e Alvarás"
-      ]
-    }
-  },
-  {
     id: "obras",
     title: "OBRAS",
     subtitle: "Execução com qualidade",
