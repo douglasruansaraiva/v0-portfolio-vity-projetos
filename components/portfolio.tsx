@@ -121,7 +121,19 @@ const sections: Section[] = [
         id: "projetos-interiores",
         title: "INTERIORES",
         description: "Design e projetos de interiores sofisticados",
-        gallery: []
+        gallery: [
+          { type: "image", src: "/projetos/interiores-01.jpg", alt: "Consultório Clínica - Escritório moderno com parede em concreto" },
+          { type: "image", src: "/projetos/interiores-02.jpg", alt: "Área Gourmet Lago - Sala com poltrona branca e vista ao pôr do sol" },
+          { type: "image", src: "/projetos/interiores-03.jpg", alt: "Área Gourmet Lago - Mesa de madeira com cadeiras verdes e iluminação natural" },
+          { type: "image", src: "/projetos/interiores-04.jpg", alt: "Área Gourmet Lago - Detalhes de bancos em mármore verde com iluminação" },
+          { type: "image", src: "/projetos/interiores-05.jpg", alt: "Área Gourmet Lago - Bancos em mármore verde com acabamento em aço" },
+          { type: "image", src: "/projetos/interiores-06.jpg", alt: "Cozinha Douglas - Cozinha moderna com ilhas e materiais claros" },
+          { type: "image", src: "/projetos/interiores-07.jpg", alt: "CENA - Sala de escritório com parede em madeira e mesa redonda" },
+          { type: "image", src: "/projetos/interiores-08.jpg", alt: "Consultório Clínica - Consultório/spa com cama de procedimento" },
+          { type: "image", src: "/projetos/interiores-09.jpg", alt: "Consultório Clínica - Consultório/estética com cama de procedimento" },
+          { type: "image", src: "/projetos/interiores-10.jpg", alt: "CENA - Sala de conferência com parede em madeira e mesa alongada" },
+          { type: "image", src: "/projetos/interiores-11.jpg", alt: "CENA Cacto - Espaço com poltrona de madeira e cacto grande em vaso" }
+        ]
       },
       {
         id: "projetos-obras",
