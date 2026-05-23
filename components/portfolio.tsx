@@ -142,7 +142,17 @@ const sections: Section[] = [
           { type: "image", src: "/projetos/interiores-18.jpg", alt: "Área Externa - Pergolado com mesa em madeira e cadeiras verdes" },
           { type: "image", src: "/projetos/interiores-19.jpg", alt: "Sala de Estar - Duas poltronas brancas com plantas e vista externa" },
           { type: "image", src: "/projetos/interiores-20.jpg", alt: "Cozinha Douglas - Cozinha moderna com mesa de madeira e potes na parede" },
-          { type: "image", src: "/projetos/interiores-21.jpg", alt: "Área Gourmet - Pergolado com bancada verde e vista para o jardim" }
+          { type: "image", src: "/projetos/interiores-21.jpg", alt: "Área Gourmet - Pergolado com bancada verde e vista para o jardim" },
+          { type: "image", src: "/projetos/interiores-22.jpg", alt: "MUP Makeup - Consultório estético com parede branca e nichos verdes" },
+          { type: "image", src: "/projetos/interiores-23.jpg", alt: "Clínica Humanizada - Planta arquitetônica de consultório com design humano" },
+          { type: "image", src: "/projetos/interiores-24.jpg", alt: "Flat - Sofá branco com almofadas em sala de estar iluminada" },
+          { type: "image", src: "/projetos/interiores-25.jpg", alt: "Flat - Poltrona verde com plantas secas e vaso branco decorativo" },
+          { type: "image", src: "/projetos/interiores-26.jpg", alt: "Flat - Cama com almofadas em tons de verde e parede texturizada" },
+          { type: "image", src: "/projetos/interiores-27.jpg", alt: "MUP Makeup - Escritório/consultório com poltronas brancas e parede com nichos" },
+          { type: "image", src: "/projetos/interiores-28.jpg", alt: "Flat - Quarto com cama em estrutura de madeira escura e parede texturizada" },
+          { type: "image", src: "/projetos/interiores-29.jpg", alt: "Flat - Cama casal com almofadas em tons neutros e parede com textura" },
+          { type: "image", src: "/projetos/interiores-30.jpg", alt: "Olenka Cosméticos - Recepção corporativa com painel de madeira natural" },
+          { type: "image", src: "/projetos/interiores-31.jpg", alt: "Flat - Banheiro externo com pia em pedra e ambiente aberto" }
         ]
       },
       {
