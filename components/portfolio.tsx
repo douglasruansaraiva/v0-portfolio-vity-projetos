@@ -506,16 +506,19 @@ export default function Portfolio() {
                               transition={{ duration: 0.5, delay: 0.5 + i * 0.15 }}
                               className="flex flex-col w-full"
                             >
-                              <div className="relative w-full bg-secondary/20">
+                              <div className="relative w-full bg-secondary/20 overflow-hidden">
                                 <Image
                                   src={media.src}
                                   alt={media.alt || `Projeto - Foto ${i + 1}`}
-                                  width={1200}
-                                  height={800}
-                                  className="w-full h-auto object-contain"
-                                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                                  loading={i === 0 ? "eager" : "lazy"}
-                                  quality={75}
+                                  width={800}
+                                  height={600}
+                                  className="w-full h-auto object-cover"
+                                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px"
+                                  loading="lazy"
+                                  quality={60}
+                                  placeholder="empty"
+                                  priority={false}
+                                  decoding="async"
                                 />
                               </div>
                               {/* Image Label */}
