@@ -162,7 +162,19 @@ const sections: Section[] = [
           { type: "image", src: "/projetos/interiores-38.jpg", alt: "Olenka Cosméticos - Painel de madeira natural com parede em tons terra" },
           { type: "image", src: "/projetos/interiores-39.jpg", alt: "Sala Principal - Ambiente integrado com sofá, tv, nichos pretos e mesa de jantar" },
           { type: "image", src: "/projetos/interiores-40.jpg", alt: "Quarto Ryan - Quarto infantil com armário branco, nichos azuis e penteadeira integrada" },
-          { type: "image", src: "/projetos/interiores-41.jpg", alt: "Recepção Clínica Laura Calado - Armário branco com detalhes em madeira e luminária redonda" }
+          { type: "image", src: "/projetos/interiores-41.jpg", alt: "Recepção Clínica Laura Calado - Armário branco com detalhes em madeira e luminária redonda" },
+          { type: "image", src: "/projetos/interiores-42.jpg", alt: "Suíte Siqueira - Quarto com cabeceira em madeira natural e banco estofado cinza" },
+          { type: "image", src: "/projetos/interiores-43.jpg", alt: "Sala Siqueira - Sala de jantar com mesa redonda de madeira e cadeiras brancas modernas" },
+          { type: "image", src: "/projetos/interiores-44.jpg", alt: "Statera - Sala integrada com sofá branco, parede madeira e nicho com prateleiras" },
+          { type: "image", src: "/projetos/interiores-45.jpg", alt: "Sala Siqueira - Sala de estar aberta com piso em níveis e escada ao fundo" },
+          { type: "image", src: "/projetos/interiores-46.jpg", alt: "Sala Siqueira - Espaço integrado com sofá modular branco e parede texturizada" },
+          { type: "image", src: "/projetos/interiores-47.jpg", alt: "Statera - Escritório com parede preta com nichos, mesa preta e cadeiras de madeira" },
+          { type: "image", src: "/projetos/interiores-48.jpg", alt: "Suíte Siqueira - Quarto com cama de madeira natural, concreto branco e banco estofado" },
+          { type: "image", src: "/projetos/interiores-49.jpg", alt: "WC - Banheiro moderno com revestimento de madeira escura e pia em concreto polido" },
+          { type: "image", src: "/projetos/interiores-50.jpg", alt: "Sala Douglas - Sofá modular branco com painel de madeira e arte de galho na parede" },
+          { type: "image", src: "/projetos/interiores-51.jpg", alt: "Escritório Scene - Espaço corporativo com parede madeira, nichos e mesa de mármore" },
+          { type: "image", src: "/projetos/interiores-52.jpg", alt: "Statera - Escritório com parede cinzenta, nichos com iluminação e mesa de mármore" },
+          { type: "image", src: "/projetos/interiores-53.jpg", alt: "Suíte Siqueira - Penteadeira/closet com guarda-roupa branco e espelho grande iluminado" }
         ]
       },
       {
