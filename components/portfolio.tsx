@@ -152,7 +152,17 @@ const sections: Section[] = [
           { type: "image", src: "/projetos/interiores-28.jpg", alt: "Flat - Quarto com cama em estrutura de madeira escura e parede texturizada" },
           { type: "image", src: "/projetos/interiores-29.jpg", alt: "Flat - Cama casal com almofadas em tons neutros e parede com textura" },
           { type: "image", src: "/projetos/interiores-30.jpg", alt: "Olenka Cosméticos - Recepção corporativa com painel de madeira natural" },
-          { type: "image", src: "/projetos/interiores-31.jpg", alt: "Flat - Banheiro externo com pia em pedra e ambiente aberto" }
+          { type: "image", src: "/projetos/interiores-31.jpg", alt: "Flat - Banheiro externo com pia em pedra e ambiente aberto" },
+          { type: "image", src: "/projetos/interiores-32.jpg", alt: "Sala Douglas - Sofá branco modular com parede de tijolos texturizados" },
+          { type: "image", src: "/projetos/interiores-33.jpg", alt: "Olenka Cosméticos - Recepção com painel em madeira e nicho com plantas" },
+          { type: "image", src: "/projetos/interiores-34.jpg", alt: "Recepção Clínica Laura Calado - Recepção com muro de travertino e planta" },
+          { type: "image", src: "/projetos/interiores-35.jpg", alt: "Sala Douglas - Sofá modular com parede de tijolos brancos e janelas grandes" },
+          { type: "image", src: "/projetos/interiores-36.jpg", alt: "Quarto Ryan - Quarto com parede azul texturizada, penteadeira e prateleiras" },
+          { type: "image", src: "/projetos/interiores-37.jpg", alt: "Sala Douglas - Sofá modular com parede texturizada e vaso com plantas secas" },
+          { type: "image", src: "/projetos/interiores-38.jpg", alt: "Olenka Cosméticos - Painel de madeira natural com parede em tons terra" },
+          { type: "image", src: "/projetos/interiores-39.jpg", alt: "Sala Principal - Ambiente integrado com sofá, tv, nichos pretos e mesa de jantar" },
+          { type: "image", src: "/projetos/interiores-40.jpg", alt: "Quarto Ryan - Quarto infantil com armário branco, nichos azuis e penteadeira integrada" },
+          { type: "image", src: "/projetos/interiores-41.jpg", alt: "Recepção Clínica Laura Calado - Armário branco com detalhes em madeira e luminária redonda" }
         ]
       },
       {
