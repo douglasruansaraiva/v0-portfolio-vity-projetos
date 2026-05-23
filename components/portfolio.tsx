@@ -198,7 +198,18 @@ const sections: Section[] = [
           { type: "image", src: "/projetos/residencial-08.jpg", alt: "Residencial A.E. - Casa com piscina e pergolado integrado na fachada" },
           { type: "image", src: "/projetos/residencial-09.jpg", alt: "Casa de Campo - Arquitetura de madeira com pergolado ao pôr do sol" },
           { type: "image", src: "/projetos/residencial-10.jpg", alt: "Área Gourmet Lago - Estrutura de madeira moderna com iluminação noturna" },
-          { type: "image", src: "/projetos/residencial-11.jpg", alt: "Casa de Campo - Estrutura rústica com piscina e pergolado de madeira" }
+          { type: "image", src: "/projetos/residencial-11.jpg", alt: "Casa de Campo - Estrutura rústica com piscina e pergolado de madeira" },
+          { type: "image", src: "/projetos/residencial-12.jpg", alt: "Casa de Campo Luxuosa - Piscinas e pergolado iluminado com vista noturna" },
+          { type: "image", src: "/projetos/residencial-13.jpg", alt: "Residencial C.L. - Fachada moderna com entrada em madeira e garagem" },
+          { type: "image", src: "/projetos/residencial-14.jpg", alt: "Fachada Douglas - Residencial minimalista com garagem dupla e cactus" },
+          { type: "image", src: "/projetos/residencial-15.jpg", alt: "Fachada Douglas - Casa moderna com tijolos em padrão geométrico" },
+          { type: "image", src: "/projetos/residencial-16.jpg", alt: "Flat - Casa contemporânea com garagem integrada e paisagismo moderno" },
+          { type: "image", src: "/projetos/residencial-17.jpg", alt: "V&V Fachada - Casa na praia com pergolado rústico ao pôr do sol" },
+          { type: "image", src: "/projetos/residencial-18.jpg", alt: "Flat - Casa com pergolado em madeira estruturada e piscina" },
+          { type: "image", src: "/projetos/residencial-19.jpg", alt: "V&V Fachada - Residência praia com estrutura de madeira e ambiente aberto" },
+          { type: "image", src: "/projetos/residencial-20.jpg", alt: "V&V Fachada - Casa moderna praia com pergolado ao pôr do sol dourado" },
+          { type: "image", src: "/projetos/residencial-21.jpg", alt: "Fachada Douglas - Projeto minimalista com fachada limpa e garagem" },
+          { type: "image", src: "/projetos/residencial-22.jpg", alt: "Casa de Campo - Área gourmet com piscinas, pergolado e telhado cerâmico" }
         ]
       }
     ]
