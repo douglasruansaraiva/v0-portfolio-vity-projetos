@@ -132,7 +132,17 @@ const sections: Section[] = [
           { type: "image", src: "/projetos/interiores-08.jpg", alt: "Consultório Clínica - Consultório/spa com cama de procedimento" },
           { type: "image", src: "/projetos/interiores-09.jpg", alt: "Consultório Clínica - Consultório/estética com cama de procedimento" },
           { type: "image", src: "/projetos/interiores-10.jpg", alt: "CENA - Sala de conferência com parede em madeira e mesa alongada" },
-          { type: "image", src: "/projetos/interiores-11.jpg", alt: "CENA Cacto - Espaço com poltrona de madeira e cacto grande em vaso" }
+          { type: "image", src: "/projetos/interiores-11.jpg", alt: "CENA Cacto - Espaço com poltrona de madeira e cacto grande em vaso" },
+          { type: "image", src: "/projetos/interiores-12.jpg", alt: "Cozinha Douglas - Cozinha moderna com bancada branca e cadeiras estofadas" },
+          { type: "image", src: "/projetos/interiores-13.jpg", alt: "Área Gourmet - Pergolado com mesa de madeira e cadeiras verdes em paisagem" },
+          { type: "image", src: "/projetos/interiores-14.jpg", alt: "Banheiro Luxuoso - Banheiro com pia em pedra e parede em texturas" },
+          { type: "image", src: "/projetos/interiores-15.jpg", alt: "Flat - Cozinha integrada com área de estar moderna" },
+          { type: "image", src: "/projetos/interiores-16.jpg", alt: "Área Gourmet Lago - Mesa de madeira alongada com vista panorâmica" },
+          { type: "image", src: "/projetos/interiores-17.jpg", alt: "Cozinha Siqueira - Cozinha compacta moderna com tacos de madeira" },
+          { type: "image", src: "/projetos/interiores-18.jpg", alt: "Área Externa - Pergolado com mesa em madeira e cadeiras verdes" },
+          { type: "image", src: "/projetos/interiores-19.jpg", alt: "Sala de Estar - Duas poltronas brancas com plantas e vista externa" },
+          { type: "image", src: "/projetos/interiores-20.jpg", alt: "Cozinha Douglas - Cozinha moderna com mesa de madeira e potes na parede" },
+          { type: "image", src: "/projetos/interiores-21.jpg", alt: "Área Gourmet - Pergolado com bancada verde e vista para o jardim" }
         ]
       },
       {
