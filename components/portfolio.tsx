@@ -187,7 +187,19 @@ const sections: Section[] = [
         id: "projetos-residencial",
         title: "RESIDENCIAL",
         description: "Projetos residenciais personalizados e confortáveis",
-        gallery: []
+        gallery: [
+          { type: "image", src: "/projetos/residencial-01.jpg", alt: "Residencial A.E. - Fachada moderna com pedra branca e garagem integrada" },
+          { type: "image", src: "/projetos/residencial-02.jpg", alt: "Residencial C.L. - Casa moderna com pergolado de madeira e piscina" },
+          { type: "image", src: "/projetos/residencial-03.jpg", alt: "Casa de Campo - Arquitetura rústica com pergolado de madeira e piscina" },
+          { type: "image", src: "/projetos/residencial-04.jpg", alt: "Residencial C.L. - Fachada contemporânea com garagem dupla e paisagismo" },
+          { type: "image", src: "/projetos/residencial-05.jpg", alt: "Área Gourmet - Pergolado moderno estruturado em madeira com vista para água" },
+          { type: "image", src: "/projetos/residencial-06.jpg", alt: "Residencial com Piscina - Casa moderna com área gourmet e piscina integrada" },
+          { type: "image", src: "/projetos/residencial-07.jpg", alt: "Residencial A.E. - Projeto minimalista com garagem dupla para veículos de luxo" },
+          { type: "image", src: "/projetos/residencial-08.jpg", alt: "Residencial A.E. - Casa com piscina e pergolado integrado na fachada" },
+          { type: "image", src: "/projetos/residencial-09.jpg", alt: "Casa de Campo - Arquitetura de madeira com pergolado ao pôr do sol" },
+          { type: "image", src: "/projetos/residencial-10.jpg", alt: "Área Gourmet Lago - Estrutura de madeira moderna com iluminação noturna" },
+          { type: "image", src: "/projetos/residencial-11.jpg", alt: "Casa de Campo - Estrutura rústica com piscina e pergolado de madeira" }
+        ]
       }
     ]
   },
