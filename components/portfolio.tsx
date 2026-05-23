@@ -504,20 +504,22 @@ export default function Portfolio() {
                               initial={{ opacity: 0, y: 30 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.5, delay: 0.5 + i * 0.15 }}
-                              className="relative w-full bg-secondary/20"
+                              className="flex flex-col w-full"
                             >
-                              <Image
-                                src={media.src}
-                                alt={media.alt || `Projeto - Foto ${i + 1}`}
-                                width={1200}
-                                height={800}
-                                className="w-full h-auto object-contain"
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                                loading={i === 0 ? "eager" : "lazy"}
-                                quality={75}
-                              />
+                              <div className="relative w-full bg-secondary/20">
+                                <Image
+                                  src={media.src}
+                                  alt={media.alt || `Projeto - Foto ${i + 1}`}
+                                  width={1200}
+                                  height={800}
+                                  className="w-full h-auto object-contain"
+                                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                                  loading={i === 0 ? "eager" : "lazy"}
+                                  quality={75}
+                                />
+                              </div>
                               {/* Image Label */}
-                              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6">
+                              <div className="bg-background/50 p-6">
                                 <p className="text-sm font-light tracking-wider text-foreground/90">
                                   {media.alt}
                                 </p>
