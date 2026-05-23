@@ -20,6 +20,17 @@ interface Section {
       poster?: string
     }[]
   }
+  subcategories?: {
+    id: string
+    title: string
+    description: string
+    gallery?: {
+      type: "image" | "video"
+      src: string
+      alt?: string
+      poster?: string
+    }[]
+  }[]
 }
 
 const sections: Section[] = [
@@ -60,7 +71,13 @@ const sections: Section[] = [
         { type: "image", src: "/casarao/casarao-08.jpg", alt: "Casarão - Fachada iluminada ao entardecer" },
         { type: "image", src: "/casarao/casarao-09.jpg", alt: "Casarão - Vista panorâmica com cores pastéis" },
         { type: "image", src: "/casarao/casarao-10.jpg", alt: "Casarão - Entre palmeiras iluminado ao anoitecer" },
-        { type: "image", src: "/casarao/casarao-11.jpg", alt: "Casarão - Detalhe do banco em primeiro plano" }
+        { type: "image", src: "/casarao/casarao-11.jpg", alt: "Casarão - Detalhe do banco em primeiro plano" },
+        { type: "image", src: "/casarao/casarao-12.jpg", alt: "Casarão - Quarto Viajante com banheiro integrado" },
+        { type: "image", src: "/casarao/casarao-13.jpg", alt: "Casarão - Sala de estar com tijolos e atmosfera aconchegante" },
+        { type: "image", src: "/casarao/casarao-14.jpg", alt: "Casarão - Quarto luxuoso com poltronas e detalhes em madeira" },
+        { type: "image", src: "/casarao/casarao-15.jpg", alt: "Casarão - Suíte completa com banheiro e varanda privativa" },
+        { type: "image", src: "/casarao/casarao-16.jpg", alt: "Casarão - Corredor com cores pastéis e plantas decorativas" },
+        { type: "image", src: "/casarao/casarao-17.jpg", alt: "Casarão - Sala íntima com sofá de couro e quadros antigos" }
       ]
     }
   },
@@ -78,73 +95,147 @@ const sections: Section[] = [
         "Projeto de Climatização",
         "Projeto de Combate a Incêndio"
       ]
-    }
-  },
-  {
-    id: "consultoria",
-    title: "CONSULTORIA",
-    subtitle: "Expertise para seu negócio",
-    content: {
-      description: "Oferecemos consultoria especializada para garantir o sucesso do seu empreendimento, com análises técnicas detalhadas e soluções personalizadas.",
-      items: [
-        "Análise de Viabilidade",
-        "Gestão de Obras",
-        "Laudos Técnicos",
-        "Perícias de Engenharia",
-        "Assessoria Técnica"
-      ]
-    }
-  },
-  {
-    id: "regularizacao",
-    title: "REGULARIZAÇÃO",
-    subtitle: "Documentação em ordem",
-    content: {
-      description: "Regularize sua obra ou imóvel com segurança e agilidade. Cuidamos de toda a burocracia para você.",
-      items: [
-        "Habite-se",
-        "Regularização de Imóveis",
-        "Aprovação de Projetos",
-        "Licenciamento Ambiental",
-        "Certidões e Alvarás"
-      ]
-    }
-  },
-  {
-    id: "obras",
-    title: "OBRAS",
-    subtitle: "Execução com qualidade",
-    content: {
-      description: "Execução de obras com qualidade, prazo e compromisso. Do planejamento à entrega final.",
-      items: [
-        "Construção Residencial",
-        "Construção Comercial",
-        "Reformas",
-        "Ampliações",
-        "Manutenção Predial"
-      ],
-      gallery: [
-        { type: "image", src: "/obras/obra-1.jpg", alt: "Obra em construção - Estrutura de concreto" },
-        { type: "image", src: "/obras/obra-2.jpg", alt: "Estrutura metálica A-frame sobre rocha" },
-        { type: "image", src: "/obras/obra-3.jpg", alt: "Vista aérea da construção metálica" },
-        { type: "image", src: "/obras/obra-4.jpg", alt: "Estrutura triangular com paisagem" },
-        { type: "image", src: "/obras/obra-5.jpg", alt: "Vista superior da estrutura metálica" },
-        { type: "image", src: "/obras/obra-6.jpg", alt: "Estrutura A-frame vista frontal" },
-        { type: "image", src: "/obras/obra-7.jpg", alt: "Vista panorâmica do local da obra" }
-      ]
-    }
+    },
+    subcategories: [
+      {
+        id: "projetos-comercial",
+        title: "COMERCIAL",
+        description: "Projetos para empreendimentos comerciais modernos e funcionais",
+        gallery: [
+          { type: "image", src: "/projetos/comercial-01.jpg", alt: "Restaurante Serra Negra - Terraço com design contemporâneo" },
+          { type: "image", src: "/projetos/comercial-02.jpg", alt: "Silvio Comercial - Edifício com fachada em cobre perforado" },
+          { type: "image", src: "/projetos/comercial-03.jpg", alt: "Restaurante Serra Negra - Área de lazer com poltronas" },
+          { type: "image", src: "/projetos/comercial-04.jpg", alt: "Ferreira Costa - Espaço comercial com tijolos aparentes" },
+          { type: "image", src: "/projetos/comercial-05.jpg", alt: "Corporate Center - Prédio moderno com materiais mistos" },
+          { type: "image", src: "/projetos/comercial-06.jpg", alt: "Mundo Infantil - Loja com signage colorida" },
+          { type: "image", src: "/projetos/comercial-07.jpg", alt: "Mundo Infantil - Fachada com exposição de produtos" },
+          { type: "image", src: "/projetos/comercial-08.jpg", alt: "Silvio Comercial - Edificação com padrão em tijolos" },
+          { type: "image", src: "/projetos/comercial-09.jpg", alt: "Escritório - Prédio administrativo moderno" },
+          { type: "image", src: "/projetos/comercial-10.jpg", alt: "Silvio Comercial - Fachada com elementos estruturais" },
+          { type: "image", src: "/projetos/comercial-11.jpg", alt: "Restaurante Serra Negra - Pavilhão com cobertura de madeira" },
+          { type: "image", src: "/projetos/comercial-12.jpg", alt: "Delifrio Caruaru - Fast food com design urbano" },
+          { type: "image", src: "/projetos/comercial-13.jpg", alt: "Corporate Center - Fachada contemporânea com vidro" }
+        ]
+      },
+      {
+        id: "projetos-interiores",
+        title: "INTERIORES",
+        description: "Design e projetos de interiores sofisticados",
+        gallery: [
+          { type: "image", src: "/projetos/interiores-01.jpg", alt: "Consultório Clínica - Escritório moderno com parede em concreto" },
+          { type: "image", src: "/projetos/interiores-02.jpg", alt: "Área Gourmet Lago - Sala com poltrona branca e vista ao pôr do sol" },
+          { type: "image", src: "/projetos/interiores-03.jpg", alt: "Área Gourmet Lago - Mesa de madeira com cadeiras verdes e iluminação natural" },
+          { type: "image", src: "/projetos/interiores-04.jpg", alt: "Área Gourmet Lago - Detalhes de bancos em mármore verde com iluminação" },
+          { type: "image", src: "/projetos/interiores-05.jpg", alt: "Área Gourmet Lago - Bancos em mármore verde com acabamento em aço" },
+          { type: "image", src: "/projetos/interiores-06.jpg", alt: "Cozinha Douglas - Cozinha moderna com ilhas e materiais claros" },
+          { type: "image", src: "/projetos/interiores-07.jpg", alt: "CENA - Sala de escritório com parede em madeira e mesa redonda" },
+          { type: "image", src: "/projetos/interiores-08.jpg", alt: "Consultório Clínica - Consultório/spa com cama de procedimento" },
+          { type: "image", src: "/projetos/interiores-09.jpg", alt: "Consultório Clínica - Consultório/estética com cama de procedimento" },
+          { type: "image", src: "/projetos/interiores-10.jpg", alt: "CENA - Sala de conferência com parede em madeira e mesa alongada" },
+          { type: "image", src: "/projetos/interiores-11.jpg", alt: "CENA Cacto - Espaço com poltrona de madeira e cacto grande em vaso" },
+          { type: "image", src: "/projetos/interiores-12.jpg", alt: "Cozinha Douglas - Cozinha moderna com bancada branca e cadeiras estofadas" },
+          { type: "image", src: "/projetos/interiores-13.jpg", alt: "Área Gourmet - Pergolado com mesa de madeira e cadeiras verdes em paisagem" },
+          { type: "image", src: "/projetos/interiores-14.jpg", alt: "Banheiro Luxuoso - Banheiro com pia em pedra e parede em texturas" },
+          { type: "image", src: "/projetos/interiores-15.jpg", alt: "Flat - Cozinha integrada com área de estar moderna" },
+          { type: "image", src: "/projetos/interiores-16.jpg", alt: "Área Gourmet Lago - Mesa de madeira alongada com vista panorâmica" },
+          { type: "image", src: "/projetos/interiores-17.jpg", alt: "Cozinha Siqueira - Cozinha compacta moderna com tacos de madeira" },
+          { type: "image", src: "/projetos/interiores-18.jpg", alt: "Área Externa - Pergolado com mesa em madeira e cadeiras verdes" },
+          { type: "image", src: "/projetos/interiores-19.jpg", alt: "Sala de Estar - Duas poltronas brancas com plantas e vista externa" },
+          { type: "image", src: "/projetos/interiores-20.jpg", alt: "Cozinha Douglas - Cozinha moderna com mesa de madeira e potes na parede" },
+          { type: "image", src: "/projetos/interiores-21.jpg", alt: "Área Gourmet - Pergolado com bancada verde e vista para o jardim" },
+          { type: "image", src: "/projetos/interiores-22.jpg", alt: "MUP Makeup - Consultório estético com parede branca e nichos verdes" },
+          { type: "image", src: "/projetos/interiores-23.jpg", alt: "Clínica Humanizada - Planta arquitetônica de consultório com design humano" },
+          { type: "image", src: "/projetos/interiores-24.jpg", alt: "Flat - Sofá branco com almofadas em sala de estar iluminada" },
+          { type: "image", src: "/projetos/interiores-25.jpg", alt: "Flat - Poltrona verde com plantas secas e vaso branco decorativo" },
+          { type: "image", src: "/projetos/interiores-26.jpg", alt: "Flat - Cama com almofadas em tons de verde e parede texturizada" },
+          { type: "image", src: "/projetos/interiores-27.jpg", alt: "MUP Makeup - Escritório/consultório com poltronas brancas e parede com nichos" },
+          { type: "image", src: "/projetos/interiores-28.jpg", alt: "Flat - Quarto com cama em estrutura de madeira escura e parede texturizada" },
+          { type: "image", src: "/projetos/interiores-29.jpg", alt: "Flat - Cama casal com almofadas em tons neutros e parede com textura" },
+          { type: "image", src: "/projetos/interiores-30.jpg", alt: "Olenka Cosméticos - Recepção corporativa com painel de madeira natural" },
+          { type: "image", src: "/projetos/interiores-31.jpg", alt: "Flat - Banheiro externo com pia em pedra e ambiente aberto" },
+          { type: "image", src: "/projetos/interiores-32.jpg", alt: "Sala Douglas - Sofá branco modular com parede de tijolos texturizados" },
+          { type: "image", src: "/projetos/interiores-33.jpg", alt: "Olenka Cosméticos - Recepção com painel em madeira e nicho com plantas" },
+          { type: "image", src: "/projetos/interiores-34.jpg", alt: "Recepção Clínica Laura Calado - Recepção com muro de travertino e planta" },
+          { type: "image", src: "/projetos/interiores-35.jpg", alt: "Sala Douglas - Sofá modular com parede de tijolos brancos e janelas grandes" },
+          { type: "image", src: "/projetos/interiores-36.jpg", alt: "Quarto Ryan - Quarto com parede azul texturizada, penteadeira e prateleiras" },
+          { type: "image", src: "/projetos/interiores-37.jpg", alt: "Sala Douglas - Sofá modular com parede texturizada e vaso com plantas secas" },
+          { type: "image", src: "/projetos/interiores-38.jpg", alt: "Olenka Cosméticos - Painel de madeira natural com parede em tons terra" },
+          { type: "image", src: "/projetos/interiores-39.jpg", alt: "Sala Principal - Ambiente integrado com sofá, tv, nichos pretos e mesa de jantar" },
+          { type: "image", src: "/projetos/interiores-40.jpg", alt: "Quarto Ryan - Quarto infantil com armário branco, nichos azuis e penteadeira integrada" },
+          { type: "image", src: "/projetos/interiores-41.jpg", alt: "Recepção Clínica Laura Calado - Armário branco com detalhes em madeira e luminária redonda" },
+          { type: "image", src: "/projetos/interiores-42.jpg", alt: "Suíte Siqueira - Quarto com cabeceira em madeira natural e banco estofado cinza" },
+          { type: "image", src: "/projetos/interiores-43.jpg", alt: "Sala Siqueira - Sala de jantar com mesa redonda de madeira e cadeiras brancas modernas" },
+          { type: "image", src: "/projetos/interiores-44.jpg", alt: "Statera - Sala integrada com sofá branco, parede madeira e nicho com prateleiras" },
+          { type: "image", src: "/projetos/interiores-45.jpg", alt: "Sala Siqueira - Sala de estar aberta com piso em níveis e escada ao fundo" },
+          { type: "image", src: "/projetos/interiores-46.jpg", alt: "Sala Siqueira - Espaço integrado com sofá modular branco e parede texturizada" },
+          { type: "image", src: "/projetos/interiores-47.jpg", alt: "Statera - Escritório com parede preta com nichos, mesa preta e cadeiras de madeira" },
+          { type: "image", src: "/projetos/interiores-48.jpg", alt: "Suíte Siqueira - Quarto com cama de madeira natural, concreto branco e banco estofado" },
+          { type: "image", src: "/projetos/interiores-49.jpg", alt: "WC - Banheiro moderno com revestimento de madeira escura e pia em concreto polido" },
+          { type: "image", src: "/projetos/interiores-50.jpg", alt: "Sala Douglas - Sofá modular branco com painel de madeira e arte de galho na parede" },
+          { type: "image", src: "/projetos/interiores-51.jpg", alt: "Escritório Scene - Espaço corporativo com parede madeira, nichos e mesa de mármore" },
+          { type: "image", src: "/projetos/interiores-52.jpg", alt: "Statera - Escritório com parede cinzenta, nichos com iluminação e mesa de mármore" },
+          { type: "image", src: "/projetos/interiores-53.jpg", alt: "Suíte Siqueira - Penteadeira/closet com guarda-roupa branco e espelho grande iluminado" }
+        ]
+      },
+      {
+        id: "projetos-obras",
+        title: "OBRAS",
+        description: "Projetos executivos para obras com precisão técnica",
+        gallery: [
+          { type: "image", src: "/obras/obra-1.jpg", alt: "Obra em construção - Estrutura de concreto armado" },
+          { type: "image", src: "/obras/obra-2.jpg", alt: "Estrutura metálica A-frame sobre rocha - Execução" },
+          { type: "image", src: "/obras/obra-3.jpg", alt: "Vista aérea da construção metálica em andamento" },
+          { type: "image", src: "/obras/obra-4.jpg", alt: "Estrutura triangular com paisagem - Fase de execução" },
+          { type: "image", src: "/obras/obra-5.jpg", alt: "Vista superior da estrutura metálica em obra" },
+          { type: "image", src: "/obras/obra-6.jpg", alt: "Estrutura A-frame vista frontal durante construção" },
+          { type: "image", src: "/obras/obra-7.jpg", alt: "Vista panorâmica do local da obra em progresso" }
+        ]
+      },
+      {
+        id: "projetos-residencial",
+        title: "RESIDENCIAL",
+        description: "Projetos residenciais personalizados e confortáveis",
+        gallery: [
+          { type: "image", src: "/projetos/residencial-01.jpg", alt: "Residencial A.E. - Fachada moderna com pedra branca e garagem integrada" },
+          { type: "image", src: "/projetos/residencial-02.jpg", alt: "Residencial C.L. - Casa moderna com pergolado de madeira e piscina" },
+          { type: "image", src: "/projetos/residencial-03.jpg", alt: "Casa de Campo - Arquitetura rústica com pergolado de madeira e piscina" },
+          { type: "image", src: "/projetos/residencial-04.jpg", alt: "Residencial C.L. - Fachada contemporânea com garagem dupla e paisagismo" },
+          { type: "image", src: "/projetos/residencial-05.jpg", alt: "Área Gourmet - Pergolado moderno estruturado em madeira com vista para água" },
+          { type: "image", src: "/projetos/residencial-06.jpg", alt: "Residencial com Piscina - Casa moderna com área gourmet e piscina integrada" },
+          { type: "image", src: "/projetos/residencial-07.jpg", alt: "Residencial A.E. - Projeto minimalista com garagem dupla para veículos de luxo" },
+          { type: "image", src: "/projetos/residencial-08.jpg", alt: "Residencial A.E. - Casa com piscina e pergolado integrado na fachada" },
+          { type: "image", src: "/projetos/residencial-09.jpg", alt: "Casa de Campo - Arquitetura de madeira com pergolado ao pôr do sol" },
+          { type: "image", src: "/projetos/residencial-10.jpg", alt: "Área Gourmet Lago - Estrutura de madeira moderna com iluminação noturna" },
+          { type: "image", src: "/projetos/residencial-11.jpg", alt: "Casa de Campo - Estrutura rústica com piscina e pergolado de madeira" },
+          { type: "image", src: "/projetos/residencial-12.jpg", alt: "Casa de Campo Luxuosa - Piscinas e pergolado iluminado com vista noturna" },
+          { type: "image", src: "/projetos/residencial-13.jpg", alt: "Residencial C.L. - Fachada moderna com entrada em madeira e garagem" },
+          { type: "image", src: "/projetos/residencial-14.jpg", alt: "Fachada Douglas - Residencial minimalista com garagem dupla e cactus" },
+          { type: "image", src: "/projetos/residencial-15.jpg", alt: "Fachada Douglas - Casa moderna com tijolos em padrão geométrico" },
+          { type: "image", src: "/projetos/residencial-16.jpg", alt: "Flat - Casa contemporânea com garagem integrada e paisagismo moderno" },
+          { type: "image", src: "/projetos/residencial-17.jpg", alt: "V&V Fachada - Casa na praia com pergolado rústico ao pôr do sol" },
+          { type: "image", src: "/projetos/residencial-18.jpg", alt: "Flat - Casa com pergolado em madeira estruturada e piscina" },
+          { type: "image", src: "/projetos/residencial-19.jpg", alt: "V&V Fachada - Residência praia com estrutura de madeira e ambiente aberto" },
+          { type: "image", src: "/projetos/residencial-20.jpg", alt: "V&V Fachada - Casa moderna praia com pergolado ao pôr do sol dourado" },
+          { type: "image", src: "/projetos/residencial-21.jpg", alt: "Fachada Douglas - Projeto minimalista com fachada limpa e garagem" },
+          { type: "image", src: "/projetos/residencial-22.jpg", alt: "Casa de Campo - Área gourmet com piscinas, pergolado e telhado cerâmico" }
+        ]
+      }
+    ]
   }
 ]
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState<string | null>(null)
+  const [activeSubcategory, setActiveSubcategory] = useState<string | null>(null)
 
   const handleSectionClick = (sectionId: string) => {
     setActiveSection(sectionId)
+    setActiveSubcategory(null)
   }
 
   const closeSection = () => {
     setActiveSection(null)
+    setActiveSubcategory(null)
   }
 
   return (
@@ -196,6 +287,7 @@ export default function Portfolio() {
             height={170}
             className="h-auto w-[300px] brightness-0 invert md:w-[450px] lg:w-[550px]"
             priority
+            quality={85}
           />
         </motion.div>
       </section>
@@ -224,11 +316,7 @@ export default function Portfolio() {
                 <span className="text-xs font-light tracking-[0.3em] text-foreground/40">
                   0{index + 1}
                 </span>
-                <h3 className={`font-light tracking-[0.2em] ${
-                  section.isHighlight 
-                    ? "text-4xl md:text-6xl lg:text-7xl" 
-                    : "text-3xl md:text-5xl lg:text-6xl"
-                }`}>
+                <h3 className="font-light tracking-[0.2em] text-xl md:text-3xl lg:text-4xl">
                   {section.title}
                 </h3>
                 <p className="mt-2 text-sm font-light tracking-wider text-foreground/60 md:text-base">
@@ -350,7 +438,7 @@ export default function Portfolio() {
                       <span className="text-xs font-light tracking-[0.3em] text-foreground/40">
                         0{sections.findIndex(s => s.id === section.id) + 1}
                       </span>
-                      <h2 className="text-4xl font-light tracking-[0.2em] md:text-6xl lg:text-7xl">
+                      <h2 className="text-2xl font-light tracking-[0.2em] md:text-4xl lg:text-5xl">
                         {section.title}
                       </h2>
                       <p className="text-base font-light tracking-wider text-foreground/60 md:text-lg">
@@ -361,8 +449,44 @@ export default function Portfolio() {
                     {/* Divider */}
                     <div className="h-px w-full bg-foreground/10" />
 
-                    {/* Gallery for Casarão/Quem Somos - All images expanded */}
-                    {section.content.gallery && section.content.gallery.length > 0 && (
+                    {/* Subcategories Menu - Only for Projetos */}
+                    {section.subcategories && section.subcategories.length > 0 && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="flex flex-col gap-3 py-4"
+                      >
+                        {section.subcategories.map((sub) => (
+                          <button
+                            key={sub.id}
+                            onClick={() => setActiveSubcategory(activeSubcategory === sub.id ? null : sub.id)}
+                            className={`w-full px-6 py-3 text-sm font-light tracking-wider transition-all text-center ${
+                              activeSubcategory === sub.id
+                                ? "bg-foreground text-background"
+                                : "border border-foreground/30 text-foreground hover:border-foreground/60"
+                            }`}
+                          >
+                            {sub.title}
+                          </button>
+                        ))}
+                      </motion.div>
+                    )}
+
+                    {/* Divider */}
+                    <div className="h-px w-full bg-foreground/10" />
+                    
+                    {/* Content - Show only if no subcategories or one is selected */}
+                    {(!section.subcategories || section.subcategories.length === 0 || activeSubcategory) && (
+                      <>
+                        {/* Gallery from section or selected subcategory */}
+                        {(activeSubcategory 
+                          ? section.subcategories?.find(s => s.id === activeSubcategory)?.gallery 
+                          : section.content.gallery
+                        ) && (activeSubcategory 
+                          ? section.subcategories?.find(s => s.id === activeSubcategory)?.gallery?.length || 0 > 0
+                          : section.content.gallery?.length || 0 > 0
+                        ) && (
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -371,7 +495,10 @@ export default function Portfolio() {
                       >
                         {/* All Images Stacked */}
                         <div className="space-y-6">
-                          {section.content.gallery.map((media, i) => (
+                          {(activeSubcategory 
+                            ? section.subcategories?.find(s => s.id === activeSubcategory)?.gallery
+                            : section.content.gallery
+                          )?.map((media, i) => (
                             <motion.div
                               key={i}
                               initial={{ opacity: 0, y: 30 }}
@@ -386,6 +513,8 @@ export default function Portfolio() {
                                 height={800}
                                 className="w-full h-auto object-contain"
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                                loading={i === 0 ? "eager" : "lazy"}
+                                quality={75}
                               />
                               {/* Image Label */}
                               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6">
@@ -416,6 +545,17 @@ export default function Portfolio() {
                         <ChevronRight className="h-4 w-4" />
                       </a>
                     </motion.div>
+                      </>
+                    )}
+
+                    {/* Subcategory Message - Show when subcategories exist but none is selected */}
+                    {section.subcategories && section.subcategories.length > 0 && !activeSubcategory && (
+                      <div className="py-8 text-center">
+                        <p className="text-foreground/60 font-light tracking-wider">
+                          Selecione uma categoria acima para visualizar os projetos
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               )
