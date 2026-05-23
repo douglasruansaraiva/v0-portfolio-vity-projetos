@@ -181,7 +181,15 @@ const sections: Section[] = [
         id: "projetos-obras",
         title: "OBRAS",
         description: "Projetos executivos para obras com precisão técnica",
-        gallery: []
+        gallery: [
+          { type: "image", src: "/obras/obra-1.jpg", alt: "Obra em construção - Estrutura de concreto armado" },
+          { type: "image", src: "/obras/obra-2.jpg", alt: "Estrutura metálica A-frame sobre rocha - Execução" },
+          { type: "image", src: "/obras/obra-3.jpg", alt: "Vista aérea da construção metálica em andamento" },
+          { type: "image", src: "/obras/obra-4.jpg", alt: "Estrutura triangular com paisagem - Fase de execução" },
+          { type: "image", src: "/obras/obra-5.jpg", alt: "Vista superior da estrutura metálica em obra" },
+          { type: "image", src: "/obras/obra-6.jpg", alt: "Estrutura A-frame vista frontal durante construção" },
+          { type: "image", src: "/obras/obra-7.jpg", alt: "Vista panorâmica do local da obra em progresso" }
+        ]
       },
       {
         id: "projetos-residencial",
