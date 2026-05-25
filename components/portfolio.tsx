@@ -44,7 +44,7 @@ const sections: Section[] = [
       gallery: [
         { type: "image", src: "/socios/socios-01.jpg", alt: "Sérgio Manoel - Sócio Fundador" },
         { type: "image", src: "/socios/socios-02.jpg", alt: "Rodrigo Souza - Sócio Fundador" },
-        { type: "image", src: "/socios/socios-03.jpg", alt: "Equipe Vascara Interiores" }
+        { type: "image", src: "/socios/socios-03.jpg", alt: "Equipe yascara Interiores" }
       ]
     }
   },
