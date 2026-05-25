@@ -298,9 +298,9 @@ export default function Portfolio() {
         {sections.map((section, index) => (
           <motion.section
             key={section.id}
-            className={`group relative cursor-pointer border-b border-foreground/10 transition-all duration-500`}
+            className="group relative cursor-pointer border-b border-foreground/10 bg-black/40 transition-all duration-500"
             onClick={() => handleSectionClick(section.id)}
-            whileHover={{ backgroundColor: "rgba(232, 228, 222, 0.05)" }}
+            whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
           >
             {section.isHighlight && (
               <div className="absolute right-6 top-6 md:right-16">
