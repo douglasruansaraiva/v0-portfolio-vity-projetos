@@ -430,32 +430,24 @@ export default function Portfolio() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 30 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className={`flex min-h-screen flex-col justify-center px-6 py-24 md:px-16 lg:px-24 ${
-                    section.id === "quem-somos" ? "bg-gradient-to-b from-secondary/20 to-background" : ""
-                  }`}
+                  className="flex min-h-screen flex-col justify-center px-6 py-24 md:px-16 lg:px-24"
                 >
                   <div className="mx-auto w-full max-w-4xl space-y-12">
                     {/* Section Header */}
-                    <div className={`space-y-6 ${section.id === "quem-somos" ? "pb-8" : ""}`}>
-                      <span className={`text-xs font-light tracking-[0.3em] ${
-                        section.id === "quem-somos" ? "text-foreground/50" : "text-foreground/40"
-                      }`}>
+                    <div className="space-y-6">
+                      <span className="text-xs font-light tracking-[0.3em] text-foreground/40">
                         0{sections.findIndex(s => s.id === section.id) + 1}
                       </span>
-                      <h2 className={`font-light tracking-[0.2em] md:text-4xl lg:text-5xl ${
-                        section.id === "quem-somos" ? "text-2xl text-foreground" : "text-2xl"
-                      }`}>
+                      <h2 className="text-2xl font-light tracking-[0.2em] md:text-4xl lg:text-5xl">
                         {section.title}
                       </h2>
-                      <p className={`font-light tracking-wider md:text-lg ${
-                        section.id === "quem-somos" ? "text-base text-foreground/70 max-w-2xl" : "text-base text-foreground/60"
-                      }`}>
+                      <p className="text-base font-light tracking-wider text-foreground/60 md:text-lg">
                         {section.subtitle}
                       </p>
                     </div>
                     
                     {/* Divider */}
-                    <div className={`${section.id === "quem-somos" ? "bg-foreground/10" : "bg-foreground/10"} h-px w-full`} />
+                    <div className="h-px w-full bg-foreground/10" />
 
                     {/* Professional About Content for QUEM SOMOS - Premium Layout */}
                     {section.id === "quem-somos" && (
