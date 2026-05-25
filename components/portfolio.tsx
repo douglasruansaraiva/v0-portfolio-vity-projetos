@@ -403,14 +403,14 @@ export default function Portfolio() {
             {/* Close Button */}
             <button
               onClick={closeSection}
-              className="fixed right-6 top-6 z-50 p-2 text-foreground/60 transition-colors hover:text-foreground md:right-12 md:top-12"
+              className="absolute right-6 top-6 z-50 p-2 text-foreground/60 transition-colors hover:text-foreground md:right-12 md:top-12"
               aria-label="Fechar"
             >
               <X className="h-8 w-8" />
             </button>
 
             {/* Back to top logo */}
-            <div className="fixed left-6 top-6 md:left-12 md:top-12">
+            <div className="absolute left-6 top-6 md:left-12 md:top-12">
               <Image
                 src="/logo-vity.png"
                 alt="Vity"
