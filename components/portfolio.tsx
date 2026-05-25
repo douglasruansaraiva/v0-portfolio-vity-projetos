@@ -298,11 +298,9 @@ export default function Portfolio() {
         {sections.map((section, index) => (
           <motion.section
             key={section.id}
-            className={`group relative cursor-pointer border-b border-foreground/10 transition-all duration-500 ${
-              section.isHighlight ? "bg-[#1A3D5C]/30" : ""
-            }`}
+            className={`group relative cursor-pointer border-b border-foreground/10 transition-all duration-500`}
             onClick={() => handleSectionClick(section.id)}
-            whileHover={{ backgroundColor: section.isHighlight ? "rgba(26, 61, 92, 0.5)" : "rgba(26, 61, 92, 0.2)" }}
+            whileHover={{ backgroundColor: "rgba(232, 228, 222, 0.05)" }}
           >
             {section.isHighlight && (
               <div className="absolute right-6 top-6 md:right-16">
@@ -329,7 +327,7 @@ export default function Portfolio() {
         ))}
 
         {/* Contact Section */}
-        <section className="relative border-b border-foreground/10 bg-secondary/10">
+        <section className="relative border-b border-foreground/10">
           <div className="flex min-h-[400px] flex-col items-center justify-center gap-8 px-6 py-20 text-center md:py-24">
             <h3 className="text-xs font-light tracking-[0.5em] text-foreground/60">
               ENTRE EM CONTATO
