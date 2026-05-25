@@ -457,28 +457,124 @@ export default function Portfolio() {
                     {/* Divider */}
                     <div className={`${section.id === "quem-somos" ? "bg-foreground/10" : "bg-foreground/10"} h-px w-full`} />
 
-                    {/* Professional About Content for QUEM SOMOS */}
+                    {/* Professional About Content for QUEM SOMOS - Premium Layout */}
                     {section.id === "quem-somos" && (
                       <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
-                        className="space-y-8 py-8"
+                        className="space-y-24 py-12"
                       >
-                        <div className="space-y-6 max-w-3xl">
-                          <p className="text-lg font-light leading-relaxed text-foreground/80">
-                            Somos uma equipe de profissionais apaixonados por design e arquitetura, dedicados a transformar espaços em experiências memoráveis. Com anos de experiência no mercado, combinamos criatividade com funcionalidade para criar soluções personalizadas.
-                          </p>
-                          <div className="grid grid-cols-2 gap-6 pt-4">
-                            <div className="space-y-2">
-                              <p className="text-sm font-light tracking-wider text-foreground/50 uppercase">Nossa Missão</p>
-                              <p className="text-foreground/70 font-light leading-relaxed">Oferecer soluções de design inovadoras que elevem o padrão de vida e negócios de nossos clientes.</p>
-                            </div>
-                            <div className="space-y-2">
-                              <p className="text-sm font-light tracking-wider text-foreground/50 uppercase">Nossa Visão</p>
-                              <p className="text-foreground/70 font-light leading-relaxed">Ser referência em design de interiores e projetos residenciais de excelência na região.</p>
+                        {/* Hero Section with Two Panels */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                          <div className="space-y-6">
+                            <h3 className="text-4xl md:text-5xl font-light leading-tight tracking-tight">
+                              Transformando espaços em experiências
+                            </h3>
+                            <p className="text-lg font-light leading-relaxed text-foreground/70">
+                              Vity Projetos & Consultoria é uma equipe de profissionais dedicada a reimaginar ambientes. Combinamos expertise técnica com visão criativa para criar espaços que não apenas impressionam visualmente, mas funcionam perfeitamente para a vida de quem os habita.
+                            </p>
+                            <div className="pt-4 space-y-3">
+                              <div className="flex items-start gap-4">
+                                <div className="text-foreground/40 font-light pt-1">→</div>
+                                <p className="text-base font-light text-foreground/70">Projetos residenciais personalizados</p>
+                              </div>
+                              <div className="flex items-start gap-4">
+                                <div className="text-foreground/40 font-light pt-1">→</div>
+                                <p className="text-base font-light text-foreground/70">Consultoria técnica e assessoria</p>
+                              </div>
+                              <div className="flex items-start gap-4">
+                                <div className="text-foreground/40 font-light pt-1">→</div>
+                                <p className="text-base font-light text-foreground/70">Design de interiores de excelência</p>
+                              </div>
                             </div>
                           </div>
+
+                          {/* Stats Grid */}
+                          <div className="grid grid-cols-2 gap-8">
+                            <div className="space-y-2">
+                              <p className="text-5xl md:text-6xl font-light text-foreground">50+</p>
+                              <p className="text-sm font-light tracking-wider text-foreground/50 uppercase">Projetos Executados</p>
+                              <p className="text-xs font-light text-foreground/40">Residências e espaços transformados</p>
+                            </div>
+                            <div className="space-y-2">
+                              <p className="text-5xl md:text-6xl font-light text-foreground">10+</p>
+                              <p className="text-sm font-light tracking-wider text-foreground/50 uppercase">Anos de Experiência</p>
+                              <p className="text-xs font-light text-foreground/40">No mercado de design</p>
+                            </div>
+                            <div className="space-y-2">
+                              <p className="text-5xl md:text-6xl font-light text-foreground">100%</p>
+                              <p className="text-sm font-light tracking-wider text-foreground/50 uppercase">Clientes Satisfeitos</p>
+                              <p className="text-xs font-light text-foreground/40">Comprometimento com qualidade</p>
+                            </div>
+                            <div className="space-y-2">
+                              <p className="text-5xl md:text-6xl font-light text-foreground">5</p>
+                              <p className="text-sm font-light tracking-wider text-foreground/50 uppercase">Prêmios</p>
+                              <p className="text-xs font-light text-foreground/40">Design e inovação</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Values Section */}
+                        <div className="space-y-12">
+                          <div className="border-t border-foreground/10 pt-12">
+                            <p className="text-xs font-light tracking-[0.3em] text-foreground/50 uppercase mb-8">Nossos Valores</p>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                              <div className="space-y-4">
+                                <h4 className="text-lg font-light">Excelência</h4>
+                                <p className="text-base font-light leading-relaxed text-foreground/70">
+                                  Cada detalhe é meticulosamente planejado e executado. Qualidade não é uma opção, é nosso padrão.
+                                </p>
+                              </div>
+                              <div className="space-y-4">
+                                <h4 className="text-lg font-light">Inovação</h4>
+                                <p className="text-base font-light leading-relaxed text-foreground/70">
+                                  Estamos sempre explorando novas tendências, materiais e técnicas para oferecer soluções contemporâneas.
+                                </p>
+                              </div>
+                              <div className="space-y-4">
+                                <h4 className="text-lg font-light">Autenticidade</h4>
+                                <p className="text-base font-light leading-relaxed text-foreground/70">
+                                  Escutamos nossos clientes e criamos espaços que refletem genuinamente suas vidas e aspirações.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Process Section */}
+                        <div className="space-y-12">
+                          <div className="border-t border-foreground/10 pt-12">
+                            <p className="text-xs font-light tracking-[0.3em] text-foreground/50 uppercase mb-8">Nosso Processo</p>
+                            <div className="space-y-6">
+                              {[
+                                { step: "01", title: "Descoberta", desc: "Conhecemos você, seus objetivos e necessidades em profundidade" },
+                                { step: "02", title: "Conceituação", desc: "Desenvolvemos conceitos visuais e técnicos personalizados" },
+                                { step: "03", title: "Design", desc: "Criamos detalhes de design executivo e especificações" },
+                                { step: "04", title: "Execução", desc: "Acompanhamos cada fase da realização com precisão" },
+                                { step: "05", title: "Entrega", desc: "Apresentamos o projeto finalizado e otimizado" }
+                              ].map((item, i) => (
+                                <div key={i} className="flex gap-6 pb-6 border-b border-foreground/5 last:border-0">
+                                  <div className="text-sm font-light tracking-wider text-foreground/40 min-w-fit pt-1">{item.step}</div>
+                                  <div className="flex-1">
+                                    <h5 className="text-base font-light mb-2">{item.title}</h5>
+                                    <p className="text-sm font-light text-foreground/60">{item.desc}</p>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* CTA Section */}
+                        <div className="border-t border-foreground/10 pt-12 text-center space-y-6">
+                          <h3 className="text-2xl md:text-3xl font-light">Vamos criar algo extraordinário?</h3>
+                          <p className="text-base font-light text-foreground/70 max-w-2xl mx-auto">
+                            Entre em contato conosco para discutir seu próximo projeto
+                          </p>
+                          <button className="mt-8 px-12 py-3 border border-foreground/30 text-foreground font-light tracking-wider hover:bg-foreground hover:text-background transition-colors">
+                            CONVERSAR AGORA
+                          </button>
                         </div>
                       </motion.div>
                     )}
